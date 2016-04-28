@@ -1,0 +1,42 @@
+/* Will be compiled down to a single stylesheet with your sass files */
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ng-scope {
+    height: 100%;
+    width: 100%;
+}
+
+.fa-left-padding {
+    padding-left: 15px;
+}
+
+.header-menu {
+    top: 0px;
+    position: fixed;
+    padding-left: 220px;
+    height: 70px;
+}

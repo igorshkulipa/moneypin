@@ -1,0 +1,25 @@
+﻿<!--header start here-->
+<div class="header-main header-menu">
+    <div class="header-left">
+        <div class="logo-name">
+            <h1>Sencoiney</h1>
+        </div>
+    </div>
+</div>
+<!--heder end here-->
+<!-- script-for sticky-nav -->
+<script>
+    $(document).ready(function () {
+        var navoffeset = $(".header-main").offset().top;
+        $(window).scroll(function () {
+            var scrollpos = $(window).scrollTop();
+            if (scrollpos >= navoffeset) {
+                $(".header-main").addClass("fixed");
+            } else {
+                $(".header-main").removeClass("fixed");
+            }
+        });
+
+    });
+</script>
+<!-- /script-for sticky-nav -->
