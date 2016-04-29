@@ -47,15 +47,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-        var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
-        (function (d, t) {
-            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
-            g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g, s)
-        }(document, 'script'));
-    </script>
 
     <link href="styles/css/main.css" rel="stylesheet">
 
@@ -64,34 +55,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div ng-include="'views/menu.html'"></div>
     <div ng-include="'views/top.html'"></div>
+    <div id="mainContentBox" class="main-content-box" ng-include="'views/main.html'"></div>
 
     <script src="styles/js/bars.js"></script>
-
-    <script>
-        var toggle = true;
-
-        $(".sidebar-icon").click(function () {
-            if (toggle) {
-                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-                $("#menu span").css({ "position": "absolute" });
-            }
-            else {
-                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-                setTimeout(function () {
-                    $("#menu span").css({ "position": "relative" });
-                }, 400);
-            }
-            toggle = !toggle;
-        });
-    </script>
     <!--scrolling js-->
-    <script src="styles/js/jquery.nicescroll.js"></script>
+    <!--<script src="styles/js/jquery.nicescroll.js"></script>-->
     <script src="styles/js/scripts.js"></script>
     <!--//scrolling js-->
     <script src="styles/js/bootstrap.js"> </script>
     <!-- mother grid end here-->
-
-
+    <script>
+        window.setTimeout(function () {
+            var elem = angular.element("#colapseMenuButton");
+            elem.toggle = false;
+            elem.bind('click', function () {
+                this.toggle = !this.toggle;
+                if (this.toggle) {
+                    $("#menuContainerDiv").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                    window.setTimeout(function () {
+                        $("#topMenuContainerDiv").addClass("header-menu-left-padding-70").removeClass("header-menu-left-padding-230");
+                    }, 400);
+                }
+                else {
+                    $("#menuContainerDiv").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                    window.setTimeout(function () {
+                        $("#topMenuContainerDiv").removeClass("header-menu-left-padding-70").addClass("header-menu-left-padding-230");
+                    }, 100);
+                }
+            });
+        }, 1000)
+    </script>
 </body>
 
 </html>

@@ -1,13 +1,19 @@
 'use strict';
-
+var toggle = false;
 angular.module('sencoiney', [])
   .config(function ($routeProvider) {
       $routeProvider
-        .when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
+        .when('/action', {
+            templateUrl: 'views/action.html',
+            controller: 'ActionCtrl',
         })
+         .when('/inout', {
+             templateUrl: 'views/inout.html',
+             controller: 'InOutCtrl',
+         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/action'
         });
   });
+
+

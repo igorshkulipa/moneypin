@@ -61,21 +61,21 @@ a {
     width: 86.5%;
 }
 
-.page-container.sidebar-collapsed {
+.sidebar-collapsed {
     transition: all 100ms linear;
     transition-delay: 300ms;
 }
 
-    .page-container.sidebar-collapsed .left-content {
+    .sidebar-collapsed .left-content {
         float: right;
         width: 96%;
     }
 
-.page-container.sidebar-collapsed-back {
+.sidebar-collapsed-back {
     transition: all 100ms linear;
 }
 
-    .page-container.sidebar-collapsed-back .left-content {
+    .sidebar-collapsed-back .left-content {
         transition: all 100ms linear;
         -webkit-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
@@ -84,59 +84,59 @@ a {
         width: 86%;
     }
 
-.page-container.sidebar-collapsed .sidebar-menu {
+.sidebar-collapsed .sidebar-menu {
     width: 65px;
     transition: all 100ms ease-in-out;
     transition-delay: 300ms;
 }
 
-.page-container.sidebar-collapsed-back .sidebar-menu {
+.sidebar-collapsed-back .sidebar-menu {
     width: 230px;
     transition: all 100ms ease-in-out;
 }
 
-.page-container.sidebar-collapsed .sidebar-icon {
+.sidebar-collapsed .sidebar-icon {
     transition: all 300ms ease-in-out;
     color: #fff;
     background: #68AE00;
 }
 
-.page-container.sidebar-collapsed .logo {
+.sidebar-collapsed .logo {
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
     transition-delay: 300ms;
     left: 18px;
 }
 
-.page-container.sidebar-collapsed-back .logo {
+.sidebar-collapsed-back .logo {
     width: 100%;
     height: 60px;
     box-sizing: border-box;
     transition: all 100ms ease-in-out;
 }
 
-.page-container.sidebar-collapsed #logo {
+.sidebar-collapsed #logo {
     opacity: 0;
     transition: all 200ms ease-in-out;
     display: none;
 }
 
-.page-container.sidebar-collapsed .down {
+.sidebar-collapsed .down {
     display: none;
 }
 
-.page-container.sidebar-collapsed-back #logo {
+.sidebar-collapsed-back #logo {
     opacity: 1;
     transition: all 200ms ease-in-out;
     transition-delay: 300ms;
 }
 
-.page-container.sidebar-collapsed #menu span {
+.sidebar-collapsed #menu span {
     opacity: 0;
     transition: all 50ms linear;
 }
 
-.page-container.sidebar-collapsed-back #menu span {
+.sidebar-collapsed-back #menu span {
     opacity: 1;
     transition: all 200ms linear;
     transition-delay: 300ms;
@@ -245,7 +245,7 @@ a {
     padding: 4.2em 0em 0em 0em;
 }
 /*----*/
-.page-container.sidebar-collapsed .left-content .fixed {
+.sidebar-collapsed .left-content .fixed {
     width: 97%;
 }
 /*----*/
@@ -328,7 +328,7 @@ span.logo-clr {
     color: #fdbb30;
 }
 
-.page-container.sidebar-collapsed-back #menu span.fa.fa-angle-right {
+.sidebar-collapsed-back #menu span.fa.fa-angle-right {
     position: absolute;
     top: 0px;
     right: 20px;
@@ -3567,7 +3567,7 @@ p.bottom {
 /*--prices end here--*/
 /*--meadia quiries start here--*/
 @media (max-width:1440px) {
-    .page-container.sidebar-collapsed-back .sidebar-menu {
+    .sidebar-collapsed-back .sidebar-menu {
         width: 190px;
     }
 
@@ -3579,7 +3579,7 @@ p.bottom {
         left: 130px;
     }
 
-    .page-container.sidebar-collapsed .logo {
+    .sidebar-collapsed .logo {
         left: 16px;
     }
 
@@ -3777,7 +3777,7 @@ p.bottom {
         padding: 0em 2em 0 1em;
     }
 
-    .page-container.sidebar-collapsed-back .left-content {
+    .sidebar-collapsed-back .left-content {
         width: 82%;
     }
 
@@ -4417,7 +4417,7 @@ p.bottom {
         width: 92%;
     }
 
-    .page-container.sidebar-collapsed {
+    .sidebar-collapsed {
         transition: all 100ms linear;
         transition-delay: 300ms;
     }
@@ -4426,15 +4426,15 @@ p.bottom {
         width: 92%;
     }
 
-    .page-container.sidebar-collapsed .left-content .fixed {
+    .sidebar-collapsed .left-content .fixed {
         width: 97%;
     }
 
-    .page-container.sidebar-collapsed-back {
+    .sidebar-collapsed-back {
         transition: all 100ms linear;
     }
 
-        .page-container.sidebar-collapsed-back .left-content {
+        .sidebar-collapsed-back .left-content {
             transition: all 100ms linear;
             -webkit-transition: all 0.3s ease;
             -moz-transition: all 0.3s ease;
@@ -4443,13 +4443,13 @@ p.bottom {
             width: 92%;
         }
 
-    .page-container.sidebar-collapsed .sidebar-menu {
+    .sidebar-collapsed .sidebar-menu {
         width: 180px;
         transition: all 100ms ease-in-out;
         transition-delay: 300ms;
     }
 
-    .page-container.sidebar-collapsed-back .sidebar-menu {
+    .sidebar-collapsed-back .sidebar-menu {
         width: 65px;
         transition: all 100ms ease-in-out;
     }
@@ -4467,11 +4467,11 @@ p.bottom {
         left: 16px;
     }
 
-    .page-container.sidebar-collapsed-back #menu span {
+    .sidebar-collapsed-back #menu span {
         display: none;
     }
 
-    .page-container.sidebar-collapsed #menu span {
+    .sidebar-collapsed #menu span {
         opacity: 1;
         transition: all 50ms linear;
         display: block;
@@ -4681,7 +4681,7 @@ p.bottom {
         width: 475px !important;
     }
 
-    .page-container.sidebar-collapsed-back .left-content {
+    .sidebar-collapsed-back .left-content {
         width: 90%;
     }
 
@@ -4780,7 +4780,7 @@ p.bottom {
         width: 87%;
     }
 
-    .page-container.sidebar-collapsed-back .left-content {
+    .sidebar-collapsed-back .left-content {
         width: 87%;
     }
 
@@ -5158,7 +5158,7 @@ p.bottom {
         width: 86%;
     }
 
-    .page-container.sidebar-collapsed-back .left-content {
+    .sidebar-collapsed-back .left-content {
         width: 83%;
     }
 
@@ -5594,7 +5594,7 @@ p.bottom {
         font-size: 0.8em;
     }
 
-    .page-container.sidebar-collapsed-back .sidebar-menu {
+    .sidebar-collapsed-back .sidebar-menu {
         width: 55px;
     }
 
@@ -5606,7 +5606,7 @@ p.bottom {
         left: 7px;
     }
 
-    .page-container.sidebar-collapsed .logo {
+    .sidebar-collapsed .logo {
         left: 7px;
     }
 
@@ -5639,7 +5639,7 @@ p.bottom {
         font-size: 1em;
     }
 
-    .page-container.sidebar-collapsed .sidebar-menu {
+    .sidebar-collapsed .sidebar-menu {
         width: 130px;
     }
 

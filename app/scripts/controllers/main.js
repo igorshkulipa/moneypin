@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('sencoiney')
-  .controller('MainCtrl', function ($scope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
+  .controller('ActionCtrl', function ($scope) {
+      $scope.scopeTemplateUrl = 'views/action.html';
+  });
+
+angular.module('sencoiney')
+  .controller('InOutCtrl', function ($scope) {
+      $scope.scopeTemplateUrl = 'views/inout.html';
   });
