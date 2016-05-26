@@ -1,8 +1,51 @@
-﻿<!--header start here-->
-<div id="topMenuContainerDiv" class="header-main header-menu header-menu-left-padding-230">
-    <div class="header-left">
-        <div class="logo-name">
-            <h1>Sencoiney</h1>
-        </div>
-    </div>
+﻿<div class="navbar-header aside-md">
+    <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+        <i class="fa fa-bars"></i>
+    </a> <a href="#" class="navbar-brand" data-toggle="fullscreen">
+        <img src="styles/images/logo.png" class="m-r-sm">Sencoiney
+    </a> <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".nav-user">
+        <span class="thumb-sm avatar pull-left dk">
+            <img src="styles/images/balance.png">
+        </span>
+    </a>
 </div>
+<ul class="nav navbar-nav navbar-right hidden-xs nav-user">
+    <li class="dropdown">
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-left dk">
+                <img src="styles/images/balance.png">
+            </span> <span>Balance&nbsp;<span class="badge badge-sm bg-danger "><i class="fa fa-dollar"></i>&nbsp;200000</span></span>
+        </a>
+
+
+        <section class="dropdown-menu aside-xl">
+            <section class="panel bg-white">
+                <header class="panel-heading b-light bg-light">
+                    <strong>You have <span class="count">2</span> notifications</strong>
+                </header>
+                <div class="list-group list-group-alt animated fadeInRight">
+                    <a href="#" class="media list-group-item">
+                        <span class="pull-left thumb-sm">
+                            <img src="styles/images/avatar.jpg" alt="John said" class="img-circle">
+                        </span> <span class="media-body block m-b-none">
+                            Use awesome animate.css<br>
+                            <small class="text-muted">10 minutes ago</small>
+                        </span>
+                    </a> <a href="#" class="media list-group-item">
+                        <span class="media-body block m-b-none">
+                            1.0 initial released<br>
+                            <small class="text-muted">1 hour ago</small>
+                        </span>
+                    </a>
+                </div>
+                <footer class="panel-footer text-sm">
+                    <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                    <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                </footer>
+            </section>
+        </section>
+    </li>
+
+
+</ul>

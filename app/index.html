@@ -1,90 +1,117 @@
 ﻿<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html>
-<!--<![endif]-->
+<html class="app">
 <head>
     <title>Sencoiney. Personal Finance Application</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Shoppy Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <link href="styles/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
-    <!-- Custom Theme files -->
-    <link href="styles/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--js-->
-    <script src="styles/js/jquery-2.1.1.min.js"></script>
-    <!--icons-css-->
-    <link href="styles/css/font-awesome.css" rel="stylesheet">
-    <!--Google Fonts-->
-    <link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>
-    <!--static chart-->
-    <script src="styles/js/Chart.min.js"></script>
-    <!--//charts-->
-    <!-- geo chart -->
-    <script src="//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-    <script src="lib/modernizr/modernizr-custom.js" type="text/javascript"></script>
-    <!--<script src="lib/html5shiv/html5shiv.js"></script>-->
-    <!-- Chartinator  -->
-    <script src="styles/js/chartinator.js"></script>
-    <!--geo chart-->
-    <!--skycons-icons-->
-    <script src="styles/js/skycons.js"></script>
-    <!--//skycons-icons-->
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view></div>
+    <meta charset="utf-8" />
+    <title>Notebook | Web Application</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles/css/app.v2.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/font.css" type="text/css" cache="false" />
+    <link rel="stylesheet" href="styles/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="styles/js/calendar/bootstrap_calendar.css" type="text/css" cache="false" /> <!--[if lt IE 9]> <script src="styles/js/ie/html5shiv.js" cache="false"></script> <script src="js/ie/respond.min.js" cache="false"></script> <script src="styles/js/ie/excanvas.js" cache="false"></script> <![endif]-->
+
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
 
-    <!-- build:js scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <!-- endbuild -->
-
-    <link href="styles/css/main.css" rel="stylesheet">
-
 </head>
 <body ng-app="sencoiney">
 
-    <div ng-include="'views/menu.html'"></div>
-    <div ng-include="'views/top.html'"></div>
-    <div id="mainContentBox" class="main-content-box" ng-include="'views/main.html'"></div>
+    <section class="vbox">
+        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+            <!--<div class="navbar-header aside-md">-->
+            <!--top-->
+            <div ng-include="'views/top.html'"></div>
+            <!--</div>-->
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-dark lter aside-md hidden-print" id="nav">
+                    <section class="vbox">
+                        <header class="header bg-primary lter text-center clearfix">
+                            <!--<div ng-hide="false" class="btn-group">
+                                <button type="button" class="btn btn-sm btn-dark btn-icon" title="New project"><i class="fa fa-plus"></i></button> <div class="btn-group hidden-nav-xs">
+                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        Switch Project
+                                        <span class="caret"></span>
+                                    </button> <ul class="dropdown-menu text-left">
+                                        <li><a href="#">Project</a></li>
+                                        <li><a href="#">Another Project</a></li>
+                                        <li><a href="#">More Projects</a></li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                            <div class="btn-group" ng-include="'views/project.html'">
 
-    <script src="styles/js/bars.js"></script>
-    <!--scrolling js-->
-    <!--<script src="styles/js/jquery.nicescroll.js"></script>-->
-    <script src="styles/js/scripts.js"></script>
-    <!--//scrolling js-->
-    <script src="styles/js/bootstrap.js"> </script>
-    <!-- mother grid end here-->
-    <script>
-        window.setTimeout(function () {
-            var elem = angular.element("#colapseMenuButton");
-            elem.toggle = false;
-            elem.bind('click', function () {
-                this.toggle = !this.toggle;
-                if (this.toggle) {
-                    $("#menuContainerDiv").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-                    window.setTimeout(function () {
-                        $("#topMenuContainerDiv").addClass("header-menu-left-padding-70").removeClass("header-menu-left-padding-230");
-                    }, 400);
-                }
-                else {
-                    $("#menuContainerDiv").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-                    window.setTimeout(function () {
-                        $("#topMenuContainerDiv").removeClass("header-menu-left-padding-70").addClass("header-menu-left-padding-230");
-                    }, 100);
-                }
-            });
-        }, 1000)
-    </script>
+                            </div>
+                        </header>
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333"
+                                 ng-include="'views/menu.html'">
+                            </div>
+                        </section>
+                        <footer class="footer lt hidden-xs b-t b-dark">
+                            <div id="chat" class="dropup">
+                                <section class="dropdown-menu on aside-md m-l-n">
+                                    <section class="panel bg-white">
+                                        <header class="panel-heading b-b b-light">Active chats</header>
+                                        <div class="panel-body animated fadeInRight">
+                                            <p class="text-sm">No active chats.</p> <p><a href="#" class="btn btn-sm btn-default">Start a chat</a></p>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div> <div id="invite" class="dropup">
+                                <section class="dropdown-menu on aside-md m-l-n">
+                                    <section class="panel bg-white">
+                                        <header class="panel-heading b-b b-light"> John <i class="fa fa-circle text-success"></i> </header>
+                                        <div class="panel-body animated fadeInRight">
+                                            <p class="text-sm">No contacts in your lists.</p> <p>
+                                                <a href="#" class="btn btn-sm btn-facebook"><i class="fa fa-fw fa-facebook"></i> Invite from Facebook</a>
+                                            </p>
+                                        </div>
+                                    </section>
+                                </section>
+                            </div> <a href="#nav" data-toggle="class:nav-xs" class="pull-right btn btn-sm btn-dark btn-icon">
+                                <i class="fa fa-angle-left text"></i>
+                                <i class="fa fa-angle-right text-active"></i>
+                            </a> <div class="btn-group hidden-nav-xs">
+                                <button type="button" title="Chats" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#chat"><i class="fa fa-comment-o"></i></button>
+                                <button type="button" title="Contacts" class="btn btn-icon btn-sm btn-dark" data-toggle="dropdown" data-target="#invite"><i class="fa fa-facebook"></i></button>
+                            </div>
+                        </footer>
+                    </section>
+                </aside> <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <section class="scrollable padder">
+                            <!--content-->
+                            <div ng-include="'views/main.html'"></div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+    <script src="styles/js/app.v2.js"></script> <!-- Bootstrap --> <!-- App -->
+    <script src="styles/js/charts/easypiechart/jquery.easy-pie-chart.js" cache="false"></script>
+    <script src="styles/js/charts/sparkline/jquery.sparkline.min.js" cache="false"></script>
+    <script src="styles/js/charts/flot/jquery.flot.min.js" cache="false"></script>
+    <script src="styles/js/charts/flot/jquery.flot.tooltip.min.js" cache="false"></script>
+    <script src="styles/js/charts/flot/jquery.flot.resize.js" cache="false"></script>
+    <script src="styles/js/charts/flot/jquery.flot.grow.js" cache="false"></script>
+    <script src="styles/js/charts/flot/demo.js" cache="false"></script>
+    <script src="styles/js/calendar/bootstrap_calendar.js" cache="false"></script>
+    <script src="styles/js/calendar/demo.js" cache="false"></script>
+    <script src="styles/js/sortable/jquery.sortable.js" cache="false"></script>
+
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+
 </body>
-
 </html>
