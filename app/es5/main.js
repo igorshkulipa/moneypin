@@ -1,0 +1,12 @@
+'use strict';
+
+(function (app) {
+    var AppComponents = ['ContentAction', 'LayoutTop', 'LayoutProject', 'LayoutMenu', 'LayoutMenuFooter'];
+    document.addEventListener('DOMContentLoaded', function () {
+        _.forEach(AppComponents, function (component) {
+            if (app.hasOwnProperty(component)) {
+                ng.platform.browser.bootstrap(app[component]);
+            }
+        });
+    });
+})(window.app || (window.app = {}));
