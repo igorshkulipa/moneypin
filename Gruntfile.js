@@ -9,7 +9,8 @@ module.exports = function (grunt) {
         'app/lib/modernizr/modernizr.js',
         'app/lib/angular2/Rx.umd.min.js',
         'app/lib/angular2/angular2-polyfills.js',
-        'app/lib/angular2/angular2-all.umd.dev.js'
+        'app/lib/angular2/angular2-all.umd.dev.js',
+        'app/lib/angular2/router.umd.js'
     ];
 
     var pathToSrc = [
