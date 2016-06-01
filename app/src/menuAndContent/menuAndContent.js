@@ -10,6 +10,7 @@
           constructor: () => {
           },
           actionHandler: ($event) => {
+              $event.stopPropagation();
               $event.preventDefault();
               alert('action');
           }

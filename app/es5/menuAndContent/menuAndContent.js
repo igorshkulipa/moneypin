@@ -9,6 +9,7 @@
     }).Class({
         constructor: function constructor() {},
         actionHandler: function actionHandler($event) {
+            $event.stopPropagation();
             $event.preventDefault();
             alert('action');
         }
