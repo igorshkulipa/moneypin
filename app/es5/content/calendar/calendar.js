@@ -1,9 +1,8 @@
 'use strict';
 
 (function (app) {
-    app.LayoutProject = ng.core.Component({
-        selector: 'layout-project',
-        templateUrl: 'src/layout/project/project.html'
+    app.ContentCalendar = ng.core.Component({
+        templateUrl: 'src/content/calendar/calendar.html'
     }).Class({
         constructor: function constructor() {}
     });

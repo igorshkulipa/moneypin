@@ -1,8 +1,7 @@
 ((app) => {
-    app.ContentAction =
+    app.ContentExpenses =
       ng.core.Component({
-          //selector: 'content-action',
-          templateUrl: 'src/content/action/action.html'
+          templateUrl: 'src/content/expenses/expenses.html'
       })
       .Class({
           constructor: () => { }

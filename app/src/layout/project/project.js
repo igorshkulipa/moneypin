@@ -6,7 +6,6 @@
       })
       .Class({
           constructor: () => {
-              console.log('layout-project layout-project')
           }
       });
 })(window.app || (window.app = {}));

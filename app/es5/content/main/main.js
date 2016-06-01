@@ -1,9 +1,8 @@
 'use strict';
 
 (function (app) {
-    app.LayoutProject = ng.core.Component({
-        selector: 'layout-project',
-        templateUrl: 'src/layout/project/project.html'
+    app.ContentMain = ng.core.Component({
+        templateUrl: 'src/content/main/main.html'
     }).Class({
         constructor: function constructor() {}
     });

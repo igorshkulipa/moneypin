@@ -1,9 +1,8 @@
 'use strict';
 
 (function (app) {
-    app.ContentAction = ng.core.Component({
-        //selector: 'content-action',
-        templateUrl: 'src/content/action/action.html'
+    app.ContentBudget = ng.core.Component({
+        templateUrl: 'src/content/budget/budget.html'
     }).Class({
         constructor: function constructor() {}
     });
