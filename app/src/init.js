@@ -1,10 +1,16 @@
-require(['knockout', 'jquery', 'layout', 'load/load'], function (ko, $, layout, load) {
-    var rootViewModel = {
+require(['knockout', 'jquery', 'layout', 'loader/loader'], function (ko, $, layout, loader) {
+
+    var $rootVM = {
+        root: {},
+        main: {},
     };
+    initApplication();
 
-    load.loadLayout();
 
-    ko.applyBindings(rootViewModel);
+    function initApplication() {
+        loader.loadLayout();
+        loader.loadModule('main', $rootVM);
+    }
 });
 
 require.config({
