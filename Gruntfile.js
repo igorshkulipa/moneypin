@@ -8,10 +8,28 @@ module.exports = function (grunt) {
 
     var pathToRequire = 'app/lib/require';
 
+    var pathToCopyMain = [
+        '404.html',
+        'index.html',
+        'favicon.ico',
+        'robots.txt'
+    ];
+
+    var pathToCopyLayout = [
+        '*.*',
+        '**/*.*'
+    ];
+
+    var pathToCopyStyles = [
+        '*.*',
+        '**/*.*'
+    ];
+
     var pathToLib = [
         'lib/lodash/lodash.js',
         'lib/modernizr/modernizr-custom.js',
-        'lib/knockout/knockout-3.4.0.js'
+        'lib/knockout/knockout-3.4.0.js',
+        'lib/jquery/jquery-2.2.4.js',
     ];
 
     var pathToSrc = [
@@ -19,9 +37,14 @@ module.exports = function (grunt) {
         'app/src/*.js'
     ];
 
-    var pathToApp = [
-        'app/es5/**/*.js',
-        'app/es5/*.js'
+    var pathToHtml = [
+        '**/*.html',
+        '*.html'
+    ];
+
+    var pathToBuild = [
+        'app/build/**/*.js',
+        'app/build/*.js'
     ];
 
     var pathToLayout = [
@@ -41,16 +64,16 @@ module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
             js: {
-                files: [].concat(pathToRequire).concat(pathToLib).concat(pathToLayout).concat(pathToApp).concat(pathToSrc).concat(['Gruntfile.js']),
-                tasks: ['babel:build', /*'browserify',*/ 'concat:vendors',/* 'concat:layout',*/ 'express']
+                files: [].concat(pathToRequire).concat(pathToLib).concat(pathToLayout).concat(pathToBuild).concat(pathToSrc).concat(['Gruntfile.js']),
+                tasks: ['babel', 'copy', 'concat', 'express']
             },
             html: {
                 files: ['app/**/*.html', 'app/*.html'],
-                tasks: ['babel:build', /*'browserify', */'concat:vendors',/* 'concat:layout',*/ 'express']
+                tasks: ['babel', 'copy', 'concat', 'express']
             },
             css: {
                 files: ['app/**/*.css', 'app/*.css', 'app/**/*.less', 'app/*.less', 'app/**/*.sass', 'app/*.sass'],
-                tasks: ['babel:build', /*'browserify',*/ 'concat:vendors', /*'concat:layout',*/ 'express']
+                tasks: ['babel', 'copy', 'concat', 'express']
             }
         },
         express: {
@@ -64,12 +87,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     dot: true,
-                    src: [
-                      destDir + '/**/*',
-                      destDir + '/*',
-                      'app/es5/**/*',
-                      'app/es5/*'
-                    ]
+                    src: [destDir + '/**/*', destDir + '/*'].concat(pathToBuild)
                 }]
             }
         },
@@ -83,23 +101,12 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'app/src/',
                     src: ['**/*.js'],
-                    dest: 'app/build/',
+                    dest: destDir,
                     ext: '.js'
                 }]
             }
         },
         copy: {
-            require: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: pathToRequire,
-                        dest: destDir,
-                        src: ['**/*.js'],
-                        processContentExclude: ['**/*.js']
-                    }
-                ]
-            },
             lib: {
                 files: [
                     {
@@ -108,6 +115,50 @@ module.exports = function (grunt) {
                         dest: destDir,
                         src: pathToLib,
                         processContentExclude: ['**/*.js']
+                    }
+                ]
+            },
+            html: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/src',
+                        dest: destDir,
+                        src: pathToHtml,
+                        processContentExclude: ['**/*.html']
+                    }
+                ]
+            },
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app',
+                        dest: destDir,
+                        src: pathToCopyMain,
+                        processContentExclude: ['**/*.html']
+                    }
+                ]
+            },
+            styles: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/styles',
+                        dest: destDir + '/styles',
+                        src: pathToCopyStyles,
+                        processContentExclude: ['**/*.html']
+                    }
+                ]
+            },
+            layout: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/lib/layout',
+                        dest: destDir + '/lib/layout',
+                        src: pathToCopyStyles,
+                        processContentExclude: ['**/*.html']
                     }
                 ]
             }
@@ -119,6 +170,10 @@ module.exports = function (grunt) {
             layout: {
                 src: pathToLayout,
                 dest: 'app/build/layout.js'
+            },
+            require: {
+                src: ['app/lib/require/require.js'],
+                dest: 'app/build/require.js'
             }
         },
     });
@@ -132,6 +187,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('dev', ['clean:dist', 'babel:build', 'copy', 'concat:layout', 'express', 'watch']);
+    grunt.registerTask('dev', ['clean', 'babel', 'copy', 'concat', 'express', 'watch']);
     grunt.registerTask('default', ['dev']);
 };
