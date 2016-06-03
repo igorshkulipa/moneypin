@@ -111,7 +111,15 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-
+        },
+        concat: {
+            options: {
+                separator: ';\n\n'
+            },
+            layout: {
+                src: pathToLayout,
+                dest: 'app/build/layout.js'
+            }
         },
     });
 
@@ -120,9 +128,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('dev', ['clean:dist', 'babel:build', /*'browserify', */'concat:vendors', /*'concat:layout',*/ 'express', 'watch']);
+    grunt.registerTask('dev', ['clean:dist', 'babel:build', 'copy', 'concat:layout', 'express', 'watch']);
     grunt.registerTask('default', ['dev']);
 };
