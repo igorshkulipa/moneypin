@@ -10,12 +10,104 @@
     <link rel="stylesheet" href="styles/css/main.css" type="text/css" />
     <link rel="stylesheet" href="styles/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" href="styles/js/calendar/bootstrap_calendar.css" type="text/css" cache="false" /> <!--[if lt IE 9]> <script src="styles/js/ie/html5shiv.js" cache="false"></script> <script src="js/ie/respond.min.js" cache="false"></script> <script src="styles/js/ie/excanvas.js" cache="false"></script> <![endif]-->
-    <script src="build/vendors.js"></script>
-    <script src="build/app.js"></script>
 </head>
-<body ng-app="sencoiney">
-    <base href="/">
-    <menu-and-content></menu-and-content>
-    <script src="build/layout.js"></script>
+<body>
+    <section class="vbox">
+        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
+            <!--<layout-top></layout-top>-->
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-dark lter aside-md hidden-print" id="nav">
+                    <section class="vbox">
+                        <header class="header bg-primary lter text-center clearfix">
+                            <div class="btn-group hidden-nav-xs">
+                                <!--<layout-project></layout-project>-->
+                            </div>
+                        </header>
+                        <section class="w-f scrollable">
+                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
+                                <nav class="nav-primary hidden-xs">
+                                    <ul class="nav">
+                                        <li class="active">
+                                            <a href="/" (click)="actionHandler($event)">
+                                                <i class="fa fa-plus icon"> <b class="bg-dark"></b> </i>
+                                                <span>Action</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Expenses']">
+                                                <i class="fa fa-refresh icon"> <b class="bg-warning dker"></b> </i>
+                                                <span>Income and Expences</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Budget']">
+                                                <i class="fa fa-money icon"> <b class="bg-success dker"></b> </i>
+                                                <span>Budget</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Debts']">
+                                                <i class="fa fa-pencil icon"> <b class="bg-primary dker"></b> </i>
+                                                <span>Debts</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Calendar']">
+                                                <i class="fa fa-calendar icon"> <b class="bg-primary"></b> </i>
+                                                <span>Payments Calendar</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Analysis']">
+                                                <i class="fa fa-bar-chart-o icon"> <b class="bg-primary dker"></b> </i>
+                                                <span>Analysis</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Category']">
+                                                <i class="fa fa-list icon"> <b class="bg-success "></b> </i>
+                                                <span>Category</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Settings']">
+                                                <i class="fa fa-gear icon"> <b class="bg-warning"></b> </i>
+                                                <span>Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['./Help']">
+                                                <i class="fa fa-question icon"> <b class="bg-danger "></b> </i>
+                                                <span>Help</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </section>
+                        <footer class="footer btn-toolbar lt hidden-xs b-t b-dark">
+                            <!--<layout-menu-footer></layout-menu-footer>-->
+                        </footer>
+                    </section>
+                </aside> <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <section class="scrollable padder">
+                            <!--<content-action></content-action>-->
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+
+    <script data-main="build/init.js" src="/build/require.js"></script>
+    <!--<script src="build/vendors.js"></script>
+    <script src="build/app.js"></script>
+    <script src="build/layout.js"></script>-->
 </body>
 </html>

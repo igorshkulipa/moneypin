@@ -4,13 +4,14 @@ var path = require('path');
 
 module.exports = function (grunt) {
 
-    var pathToVendors = [
-        'app/lib/lodash/lodash.js',
-        'app/lib/modernizr/modernizr.js',
-        'app/lib/angular2/Rx.umd.min.js',
-        'app/lib/angular2/angular2-polyfills.js',
-        'app/lib/angular2/angular2-all.umd.dev.js',
-        'app/lib/angular2/router.umd.js'
+    var destDir = 'app/build';
+
+    var pathToRequire = 'app/lib/require';
+
+    var pathToLib = [
+        'lib/lodash/lodash.js',
+        'lib/modernizr/modernizr-custom.js',
+        'lib/knockout/knockout-3.4.0.js'
     ];
 
     var pathToSrc = [
@@ -40,16 +41,16 @@ module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
             js: {
-                files: [].concat(pathToVendors).concat(pathToLayout).concat(pathToApp).concat(pathToSrc).concat(['Gruntfile.js']),
-                tasks: ['babel:build', 'browserify', 'concat:vendors', 'concat:layout', 'express']
+                files: [].concat(pathToRequire).concat(pathToLib).concat(pathToLayout).concat(pathToApp).concat(pathToSrc).concat(['Gruntfile.js']),
+                tasks: ['babel:build', /*'browserify',*/ 'concat:vendors',/* 'concat:layout',*/ 'express']
             },
             html: {
                 files: ['app/**/*.html', 'app/*.html'],
-                tasks: ['babel:build', 'browserify', 'concat:vendors', 'concat:layout', 'express']
+                tasks: ['babel:build', /*'browserify', */'concat:vendors',/* 'concat:layout',*/ 'express']
             },
             css: {
                 files: ['app/**/*.css', 'app/*.css', 'app/**/*.less', 'app/*.less', 'app/**/*.sass', 'app/*.sass'],
-                tasks: ['babel:build', 'browserify', 'concat:vendors', 'concat:layout', 'express']
+                tasks: ['babel:build', /*'browserify',*/ 'concat:vendors', /*'concat:layout',*/ 'express']
             }
         },
         express: {
@@ -64,31 +65,13 @@ module.exports = function (grunt) {
                 files: [{
                     dot: true,
                     src: [
-                      'app/build/**/*',
-                      'app/build/*',
+                      destDir + '/**/*',
+                      destDir + '/*',
                       'app/es5/**/*',
                       'app/es5/*'
                     ]
                 }]
             }
-        },
-        concat: {
-            options: {
-                separator: ';\n\n'
-            },
-            app: {
-                src: pathToApp,
-                dest: 'app/build/app.js'
-            },
-            vendors: {
-                src: pathToVendors,
-                dest: 'app/build/vendors.js'
-            },
-            layout: {
-                src: pathToLayout,
-                dest: 'app/build/layout.js'
-            },
-
         },
         babel: {
             options: {
@@ -100,34 +83,46 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: 'app/src/',
                     src: ['**/*.js'],
-                    dest: 'app/es5/',
+                    dest: 'app/build/',
                     ext: '.js'
                 }]
             }
         },
-
-        browserify: {
-            options: {
-                browserifyOptions: {
-                    debug: true
-                }
+        copy: {
+            require: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: pathToRequire,
+                        dest: destDir,
+                        src: ['**/*.js'],
+                        processContentExclude: ['**/*.js']
+                    }
+                ]
             },
-            dist: {
-                files: {
-                    'app/build/app.js': pathToApp
-                }
+            lib: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app',
+                        dest: destDir,
+                        src: pathToLib,
+                        processContentExclude: ['**/*.js']
+                    }
+                ]
             }
-        }
+
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('dev', ['clean:dist', 'babel:build', 'browserify', 'concat:vendors', 'concat:layout', 'express', 'watch']);
+    grunt.registerTask('dev', ['clean:dist', 'babel:build', /*'browserify', */'concat:vendors', /*'concat:layout',*/ 'express', 'watch']);
     grunt.registerTask('default', ['dev']);
 };
