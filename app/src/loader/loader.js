@@ -1,38 +1,58 @@
 ﻿define(['knockout', 'jquery', 'config/config'], (ko, $, config) => {
+    //var elem;
+    //var template;
+    var moduleCache = {};
+
     return {
         loadModule: loadModule,
         loadLayout: loadLayout
     };
 
-    function loadModule(module, viewModel, position) {
-        _loadViewModel(module, viewModel, position);
+    //Load Module
+    function loadModule(module, position) {
+        moduleCache[module] = moduleCache[module] || {};
+        calcPosition(module, position);
+        loadViewModel(module, position);
     }
 
-    function loadLayout() {
-        for (var layout in config.layout) {
-            _loadTemplate(config.layout[layout].element, config.layout[layout].path)
+    function calcPosition(module, position) {
+        position = position || config.content.main.element;
+        if (moduleCache[module]) {
+            moduleCache[module].position = position;
+            moduleCache[module].element = $('#' + position);
         }
     }
 
-    function _loadMainContent(module, position) {
-        position = position || config.content.main.element;
+    function loadViewModel(module, position) {
+        require([loadModuleTemplate(module, position)], (vm) => {
+            moduleCache[module].viewModel = vm;
+            if (moduleCache[module].element[0]) ko.cleanNode(moduleCache[module].element[0]);
+            while (!moduleCache[module].template) { }
+            moduleCache[module].element.html(moduleCache[module].template);
+            ko.applyBindings(vm, moduleCache[module].element.get(0));
+        });
+    }
+
+    function loadModuleTemplate(module, position) {
         $.get(config.modules[module].html)
-            .done((template) => {
-                $('#' + position).append(template);
+            .then((template) => {
+                moduleCache[module].template = template;
             });
         return config.modules[module].js;
     }
 
-    function _loadViewModel(module, viewModel, position) {
-        require([_loadMainContent(module, position)], (vm) => {
-            viewModel.main = vm;
-            ko.applyBindings(viewModel);
-        });
+    // Load Layout
+    function loadLayout() {
+        var layoutPromises = [];
+        for (var layout in config.layout) {
+            layoutPromises.push(loadTemplate(config.layout[layout].element, config.layout[layout].path));
+        }
+        return $.when.apply(null, layoutPromises);
     }
 
-    function _loadTemplate(elem, path) {
+    function loadTemplate(elem, path) {
         $.get(path)
-            .done((template) => {
+            .then((template) => {
                 $('#' + elem).append(template);
             });
     }

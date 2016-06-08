@@ -30,6 +30,10 @@ module.exports = function (grunt) {
         'lib/modernizr/modernizr-custom.js',
         'lib/knockout/knockout-3.4.0.js',
         'lib/jquery/jquery-2.2.4.js',
+        'lib/pager/pager.js',
+        'lib/crossroads/crossroads.js',
+        'lib/signals/signals.js',
+        'lib/hasher/hasher.js'
     ];
 
     var pathToSrc = [

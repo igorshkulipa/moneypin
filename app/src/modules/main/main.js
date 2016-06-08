@@ -26,6 +26,25 @@ define(['knockout'], (ko) => {
                 name: 'Account 4',
                 sum: 55444
             },
-        ]
+            {
+                type: 'mastercard',
+                name: 'Account 5',
+                sum: 556699
+            },
+            {
+                type: 'mastercard',
+                name: 'Account 6',
+                sum: 33222
+            },
+        ],
+        methods: {
+            isEven: () => {
+                return true;
+            }
+        }
     };
+
+    function isEven(number) {
+        return !!(parseInt(number) % 2);
+    }
 });

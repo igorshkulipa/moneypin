@@ -29,38 +29,57 @@
         },
         modules: {
             analysis: {
+                name: 'analysis',
+                menuText: 'Analysis',
                 html: 'modules/analysis/analysis.html',
                 js: 'modules/analysis/analysis'
             },
             budget: {
+                name: 'budget',
+                menuText: 'Budget',
                 html: 'modules/budget/budget.html',
                 js: 'modules/budget/budget'
             },
             calendar: {
+                name: 'calendar',
+                menuText: 'Payments Calendar',
                 html: 'modules/calendar/calendar.html',
                 js: 'modules/calendar/calendar'
             },
             category: {
+                name: 'category',
+                menuText: 'Category',
                 html: 'modules/category/category.html',
                 js: 'modules/category/category'
             },
             debts: {
+                name: 'debts',
+                menuText: 'Debts',
                 html: 'modules/debts/debts.html',
                 js: 'modules/debts/debts'
             },
             expenses: {
+                name: 'expenses',
+                menuText: 'Income and Expenses',
                 html: 'modules/expenses/expenses.html',
                 js: 'modules/expenses/expenses'
             },
             help: {
+                name: 'help',
+                menuText: 'Help',
                 html: 'modules/help/help.html',
                 js: 'modules/help/help'
             },
             main: {
+                name: 'main',
+                menuText: 'Main',
                 html: 'modules/main/main.html',
-                js: 'modules/main/main'
+                js: 'modules/main/main',
+                default: true
             },
             settings: {
+                name: 'settings',
+                menuText: 'Settings',
                 html: 'modules/settings/settings.html',
                 js: 'modules/settings/settings'
             }
