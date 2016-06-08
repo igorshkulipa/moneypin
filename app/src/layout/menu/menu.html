@@ -1,9 +1,9 @@
 ﻿<nav class="nav-primary hidden-xs">
     <ul class="nav">
         <li class="active">
-            <a href="javascript:void(0)" onclick="actionHandler($event)">
+            <a href="javascript:void(0)" data-bind="click:actionClick">
                 <i class="fa fa-plus icon"> <b class="bg-dark"></b> </i>
-                <span>Action</span>
+                <span data-bind="text:title"></span>
             </a>
         </li>
         <li>

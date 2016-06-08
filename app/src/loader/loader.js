@@ -1,6 +1,4 @@
 ﻿define(['knockout', 'jquery', 'config/config'], (ko, $, config) => {
-    //var elem;
-    //var template;
     var moduleCache = {};
 
     return {
@@ -8,52 +6,41 @@
         loadLayout: loadLayout
     };
 
-    //Load Module
-    function loadModule(module, position) {
-        moduleCache[module] = moduleCache[module] || {};
-        calcPosition(module, position);
-        loadViewModel(module, position);
-    }
-
-    function calcPosition(module, position) {
-        position = position || config.content.main.element;
-        if (moduleCache[module]) {
-            moduleCache[module].position = position;
-            moduleCache[module].element = $('#' + position);
+    function loadLayout() {
+        for (var layout in config.layout) {
+            loadModule(config.layout[layout]);
         }
     }
 
-    function loadViewModel(module, position) {
-        require([loadModuleTemplate(module, position)], (vm) => {
-            moduleCache[module].viewModel = vm;
-            if (moduleCache[module].element[0]) ko.cleanNode(moduleCache[module].element[0]);
-            while (!moduleCache[module].template) { }
-            moduleCache[module].element.html(moduleCache[module].template);
-            ko.applyBindings(vm, moduleCache[module].element.get(0));
+    function loadModule(module) {
+        moduleCache[module.name] = moduleCache[module.name] || module;
+        calcPosition(module);
+        loadViewModel(module);
+    }
+
+    function calcPosition(module) {
+        var position = module.position || config.config.main.position;
+        if (moduleCache[module.name]) {
+            moduleCache[module.name].position = position;
+            moduleCache[module.name].element = $('#' + position);
+        }
+    }
+
+    function loadViewModel(module) {
+        require([loadModuleTemplate(module)], (vm) => {
+            moduleCache[module.name].viewModel = vm;
+            if (moduleCache[module.name].element[0]) ko.cleanNode(moduleCache[module.name].element[0]);
+            while (!moduleCache[module.name].template) { }
+            moduleCache[module.name].element.html(moduleCache[module.name].template);
+            ko.applyBindings(vm, moduleCache[module.name].element.get(0));
         });
     }
 
-    function loadModuleTemplate(module, position) {
-        $.get(config.modules[module].html)
+    function loadModuleTemplate(module) {
+        $.get(moduleCache[module.name].html)
             .then((template) => {
-                moduleCache[module].template = template;
+                moduleCache[module.name].template = template;
             });
-        return config.modules[module].js;
-    }
-
-    // Load Layout
-    function loadLayout() {
-        var layoutPromises = [];
-        for (var layout in config.layout) {
-            layoutPromises.push(loadTemplate(config.layout[layout].element, config.layout[layout].path));
-        }
-        return $.when.apply(null, layoutPromises);
-    }
-
-    function loadTemplate(elem, path) {
-        $.get(path)
-            .then((template) => {
-                $('#' + elem).append(template);
-            });
+        return moduleCache[module.name].js;
     }
 });

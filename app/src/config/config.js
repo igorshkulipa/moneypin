@@ -1,87 +1,95 @@
 ﻿define([], () => {
     return {
         layout: {
-            main: {
-                element: 'layout-main',
-                path: 'layout/main/main.html'
-            },
             top: {
-                element: 'layout-top',
-                path: 'layout/top/top.html'
+                position: 'layout-top',
+                name: 'top',
+                menuText: 'top',
+                html: '/layout/top/top.html',
+                js: '/layout/top/top.js'
             },
             project: {
-                element: 'layout-project',
-                path: 'layout/project/project.html'
+                position: 'layout-project',
+                name: 'project',
+                menuText: 'project',
+                html: '/layout/project/project.html',
+                js: '/layout/project/project.js'
             },
             menu: {
-                element: 'layout-menu',
-                path: 'layout/menu/menu.html'
+                position: 'layout-menu',
+                name: 'menu',
+                menuText: 'menu',
+                html: '/layout/menu/menu.html',
+                js: '/layout/menu/menu.js'
             },
             menuFooter: {
-                element: 'layout-menu-footer',
-                path: 'layout/menuFooter/menuFooter.html'
+                position: 'layout-menu-footer',
+                name: 'menuFooter',
+                menuText: 'menuFooter',
+                html: '/layout/menuFooter/menuFooter.html',
+                js: '/layout/menuFooter/menuFooter.js'
+            }
+        },
+        config: {
+            main: {
+                position: 'content-main'
             }
         },
         content: {
-            main: {
-                element: 'content-main'
-            }
-        },
-        modules: {
             analysis: {
                 name: 'analysis',
                 menuText: 'Analysis',
-                html: 'modules/analysis/analysis.html',
-                js: 'modules/analysis/analysis'
+                html: 'content/analysis/analysis.html',
+                js: 'content/analysis/analysis'
             },
             budget: {
                 name: 'budget',
                 menuText: 'Budget',
-                html: 'modules/budget/budget.html',
-                js: 'modules/budget/budget'
+                html: 'content/budget/budget.html',
+                js: 'content/budget/budget'
             },
             calendar: {
                 name: 'calendar',
                 menuText: 'Payments Calendar',
-                html: 'modules/calendar/calendar.html',
-                js: 'modules/calendar/calendar'
+                html: 'content/calendar/calendar.html',
+                js: 'content/calendar/calendar'
             },
             category: {
                 name: 'category',
                 menuText: 'Category',
-                html: 'modules/category/category.html',
-                js: 'modules/category/category'
+                html: 'content/category/category.html',
+                js: 'content/category/category'
             },
             debts: {
                 name: 'debts',
                 menuText: 'Debts',
-                html: 'modules/debts/debts.html',
-                js: 'modules/debts/debts'
+                html: 'content/debts/debts.html',
+                js: 'content/debts/debts'
             },
             expenses: {
                 name: 'expenses',
                 menuText: 'Income and Expenses',
-                html: 'modules/expenses/expenses.html',
-                js: 'modules/expenses/expenses'
+                html: 'content/expenses/expenses.html',
+                js: 'content/expenses/expenses'
             },
             help: {
                 name: 'help',
                 menuText: 'Help',
-                html: 'modules/help/help.html',
-                js: 'modules/help/help'
+                html: 'content/help/help.html',
+                js: 'content/help/help'
             },
             main: {
                 name: 'main',
                 menuText: 'Main',
-                html: 'modules/main/main.html',
-                js: 'modules/main/main',
+                html: 'content/main/main.html',
+                js: 'content/main/main',
                 default: true
             },
             settings: {
                 name: 'settings',
                 menuText: 'Settings',
-                html: 'modules/settings/settings.html',
-                js: 'modules/settings/settings'
+                html: 'content/settings/settings.html',
+                js: 'content/settings/settings'
             }
 
         }

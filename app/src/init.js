@@ -1,29 +1,32 @@
 require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, layout, loader, router, config) => {
 
     var $rootVM = {
-        root: {},
-        main: {},
+        actionHandler: () => {
+            alert('action');
+        },
+        text: ko.observable('text')
     };
     initApplication();
 
 
     function initApplication() {
         loader.loadLayout()
-            .then(() => {
-                for (var module in config.modules) {
-                    router.add(config.modules[module].name);
-                }
 
-                router
-                    .init((request, data) => {
-                        loader.loadModule(request);
-                    }, (request) => {
-                        router.redirect('main');
-                    });
+        for (var content in config.content) {
+            router.add(config.content[content].name);
+        }
+
+        router
+            .init((request, data) => {
+                loader.loadModule(config.content[request]);
+            }, (request) => {
+                router.redirect('main');
             });
     }
 
-
+    function actionHandler() {
+        alert('action');
+    }
 });
 
 require.config({
