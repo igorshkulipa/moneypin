@@ -40,6 +40,8 @@ require.config({
         pager: 'lib/pager/pager',
         crossroads: 'lib/crossroads/crossroads',
         signals: 'lib/signals/signals',
-        hasher: 'lib/hasher/hasher'
+        hasher: 'lib/hasher/hasher',
+        jqeasypiechart: 'lib/jquery/jquery.easy-pie-chart',
+        jqsparkline: 'lib/jquery/jquery.sparkline.min'
     }
 });

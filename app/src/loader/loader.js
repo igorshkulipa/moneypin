@@ -33,6 +33,7 @@
             while (!moduleCache[module.name].template) { }
             moduleCache[module.name].element.html(moduleCache[module.name].template);
             ko.applyBindings(vm, moduleCache[module.name].element.get(0));
+            if (moduleCache[module.name].viewModel.methods && moduleCache[module.name].viewModel.methods.afterload) moduleCache[module.name].viewModel.methods.afterload();
         });
     }
 
