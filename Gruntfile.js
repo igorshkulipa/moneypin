@@ -34,8 +34,10 @@ module.exports = function (grunt) {
         'lib/crossroads/crossroads.js',
         'lib/signals/signals.js',
         'lib/hasher/hasher.js',
+        'lib/remodal/remodal.js',
         'lib/jquery/jquery.easy-pie-chart.js',
-        'lib/jquery/jquery.sparkline.min.js'
+        'lib/jquery/jquery.sparkline.min.js',
+        'lib/jquery/jquery-ui.js'
     ];
 
     var pathToSrc = [

@@ -2,7 +2,6 @@ define(['knockout', 'jquery', 'jqeasypiechart'], (ko, $, $chart) => {
 
     return {
         strings: {
-            home: ko.observable('Sencoiney'),
             title: ko.observable('Main'),
             description: ko.observable('Accounts and general information')
         },

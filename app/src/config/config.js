@@ -1,6 +1,18 @@
 ﻿define([], () => {
     return {
+        root: {
+            position: 'main',
+            element: {}
+        },
         layout: {
+            title: {
+                position: 'layout-title',
+                name: 'title',
+                menuText: 'title',
+                html: '/layout/title/title.html',
+                js: '/layout/title/title.js',
+                global: true
+            },
             top: {
                 position: 'layout-top',
                 name: 'top',
@@ -8,12 +20,12 @@
                 html: '/layout/top/top.html',
                 js: '/layout/top/top.js'
             },
-            project: {
-                position: 'layout-project',
-                name: 'project',
-                menuText: 'project',
-                html: '/layout/project/project.html',
-                js: '/layout/project/project.js'
+            back: {
+                position: 'layout-back',
+                name: 'back',
+                menuText: 'back',
+                html: '/layout/back/back.html',
+                js: '/layout/back/back.js'
             },
             menu: {
                 position: 'layout-menu',
@@ -34,6 +46,14 @@
             main: {
                 position: 'content-main'
             }
+        },
+        modals: {
+            action: {
+                position: 'modal-action',
+                name: 'action',
+                html: 'modals/action/action.html',
+                js: 'modals/action/action'
+            },
         },
         content: {
             analysis: {

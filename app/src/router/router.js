@@ -25,6 +25,7 @@
 
     function redirect(module) {
         crossroads.parse(module);
+        hasher.setHash(module);
     }
 
     function _parseHash(newHash) {

@@ -1,16 +1,13 @@
 require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, layout, loader, router, config) => {
 
     var $rootVM = {
-        actionHandler: () => {
-            alert('action');
-        },
-        text: ko.observable('text')
     };
     initApplication();
 
 
     function initApplication() {
-        loader.loadLayout()
+        loader.loadLayout();
+        loader.loadModals();
 
         for (var content in config.content) {
             router.add(config.content[content].name);
@@ -18,7 +15,14 @@ require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'conf
 
         router
             .init((request, data) => {
-                loader.loadModule(config.content[request]);
+                loader.loadModule(config.content[request], $rootVM)
+                .then(() => {
+                    var animationName = 'fadeInRight';
+                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    $('#' + config.config.main.position).addClass('animated ' + animationName).one(animationEnd, function () {
+                        $('#' + config.config.main.position).removeClass('animated ' + animationName);
+                    });
+                });
             }, (request) => {
                 router.redirect('main');
             });
@@ -42,6 +46,8 @@ require.config({
         signals: 'lib/signals/signals',
         hasher: 'lib/hasher/hasher',
         jqeasypiechart: 'lib/jquery/jquery.easy-pie-chart',
-        jqsparkline: 'lib/jquery/jquery.sparkline.min'
+        jqsparkline: 'lib/jquery/jquery.sparkline.min',
+        jqui: 'lib/jquery/jquery-ui',
+        remodal: 'lib/remodal/remodal'
     }
 });

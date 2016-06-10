@@ -9,9 +9,12 @@
     <link rel="stylesheet" href="styles/css/font.css" type="text/css" cache="false" />
     <link rel="stylesheet" href="styles/css/main.css" type="text/css" />
     <link rel="stylesheet" href="styles/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/remodal.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/remodal-default-theme.css" type="text/css" />
 </head>
 <body>
-    <section class="vbox">
+    <section class="vbox" id="main">
         <header class="bg-dark dk header navbar navbar-fixed-top-xs">
             <div id="layout-top"></div>
         </header>
@@ -22,23 +25,24 @@
                     <section class="vbox">
                         <header class="header bg-primary lter text-center clearfix">
                             <div class="btn-group hidden-nav-xs">
-                                <div id="layout-project"></div>
+                                <section id="layout-back"></section>
                             </div>
                         </header>
                         <section class="w-f scrollable">
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
-                                <div id="layout-menu"></div>
+                                <section id="layout-menu"></section>
                             </div>
                         </section>
                         <footer class="footer btn-toolbar lt hidden-xs b-t b-dark">
-                            <div id="layout-menu-footer"></div>
+                            <section id="layout-menu-footer"></section>
                         </footer>
                     </section>
                 </aside> <!-- /.aside -->
                 <section id="content">
                     <section class="vbox">
                         <section class="scrollable padder">
-                            <div id="content-main"></div>
+                            <section id="layout-title"></section>
+                            <section id="content-main"></section>
                         </section>
                     </section>
                 </section>
@@ -46,5 +50,7 @@
         </section>
     </section>
     <script data-main="init.js" src="require.js"></script>
+
+    <div id="modal-action" data-remodal-id="modalAction"></div>
 </body>
 </html>

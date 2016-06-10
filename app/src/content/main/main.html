@@ -1,12 +1,5 @@
 ﻿
-<section class="scrollable padder">
-    <ul class="breadcrumb no-border no-radius b-b b-light pull-in">
-        <li class="active" data-bind="text:strings.title"></li>
-    </ul>
-    <div class="m-b-md">
-        <h3 class="m-b-none" data-bind="text:strings.title"></h3>
-        <small data-bind="text:strings.description"></small>
-    </div>
+
     <section class="panel panel-default  no-border no-radius">
         <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:accounts">
             <div class="col-sm-6 col-md-3  no-border no-radius panel-body" data-bind="css:{'lt': ($index() % 2 != 0)}">
@@ -37,4 +30,3 @@
             </div>
         </div>
     </section>
-</section>

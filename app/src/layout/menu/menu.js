@@ -1,8 +1,8 @@
-﻿define(['knockout'], (ko) => {
+﻿define(['knockout', 'modals/action/action'], (ko, action) => {
     return {
         title: ko.observable('Action'),
         actionClick: () => {
-            alert('click');
+            action.show();
         }
     };
 });
