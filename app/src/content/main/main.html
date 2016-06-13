@@ -1,32 +1,33 @@
 ﻿
 
-    <section class="panel panel-default  no-border no-radius">
-        <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:accounts">
-            <div class="col-sm-6 col-md-3  no-border no-radius panel-body" data-bind="css:{'lt': ($index() % 2 != 0)}">
-                <section class="panel panel-info">
-                    <div class="inline">
-                        <div class="easypiechart easyPieChart" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="2000" data-scale-color="#FEFEFE" data-size="100">
-                            <span class="fa-stack fa-2x m-r-s m-t-s">
-                                <i class="fa fa-circle fa-stack-2x text-info"></i>
-                                <i class="fa fa-stack-1x text-white"
-                                   data-bind="css : {
+<section class="panel panel-default  no-border no-radius">
+    <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:accounts">
+        <div class="col-sm-6 col-md-3  no-border no-radius panel-body" data-bind="css:{'lt': ($index() % 2 != 0)}">
+            <section class="panel panel-info">
+                <div class="inline">
+                    <div class="easypiechart easyPieChart" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="2000" data-scale-color="#FEFEFE" data-size="100">
+                        <span class="fa-stack fa-2x m-r-s m-t-s">
+                            <i class="fa fa-circle fa-stack-2x text-info"></i>
+                            <i class="fa fa-stack-1x text-white"
+                               data-bind="css : {
                                    'fa-money' : $parent.methods.isCash($data),
                                    'fa-bank' : $parent.methods.isBank($data),
                                    'fa-cc-visa' : $parent.methods.isVisa($data),
                                    'fa-cc-mastercard' : $parent.methods.isMastercard($data),
-                                   'fa-paypal' : $parent.methods.isPaypal($data) }"></i>
-                            </span>
-                        </div>
+                                   'fa-paypal' : $parent.methods.isPaypal($data),
+                                   'fa-question' : $parent.methods.isTypeUndefined($data)  }"></i>
+                        </span>
                     </div>
-                    <div class="inline p-l pos-abs p-r-xl wrd-brk lines-2">
-                        <a class="clear" href="javascript:void(0)">
-                            <span class="h3 block m-t-xs">
-                                <strong data-bind="text:sum"></strong>
-                            </span>
-                            <small class="text-muted text-uc" data-bind="text:name"></small>
-                        </a>
-                    </div>
-                </section>
-            </div>
+                </div>
+                <div class="inline p-l pos-abs p-r-xl wrd-brk lines-2">
+                    <a class="clear" href="javascript:void(0)">
+                        <span class="h3 block m-t-xs">
+                            <strong data-bind="text:sum"></strong>
+                        </span>
+                        <small class="text-muted text-uc" data-bind="text:name"></small>
+                    </a>
+                </div>
+            </section>
         </div>
-    </section>
+    </div>
+</section>

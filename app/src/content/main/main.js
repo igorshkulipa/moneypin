@@ -1,58 +1,22 @@
-define(['knockout', 'jquery', 'jqeasypiechart'], (ko, $, $chart) => {
+define(['knockout', 'jquery', 'jqeasypiechart', 'services/mockService'], (ko, $, $chart, mockService) => {
 
     return {
         strings: {
             title: ko.observable('Main'),
             description: ko.observable('Accounts and general information')
         },
-        accounts: [
-            {
-                type: 'bank',
-                name: 'Account 1',
-                sum: 44555,
-                percent: 75,
-            },
-            {
-                type: 'cash',
-                name: 'Account 2 Cash',
-                sum: 55566,
-                percent: 50,
-            },
-            {
-                type: 'visa',
-                name: 'Account 3 Very Long Account Name With Spaces to Definetely Fit Some more than One Line',
-                sum: 33444,
-                percent: 100,
-            },
-            {
-                type: 'mastercard',
-                name: 'Account_Very_Long_Account_Name_Without_Any_Space_Or_Other_Separator',
-                sum: 55444,
-                percent: 0,
-            },
-            {
-                type: 'paypal',
-                name: 'Account 5',
-                sum: 556699,
-                percent: 25,
-            },
-            {
-                type: 'visa',
-                name: 'Account 6',
-                sum: 33222,
-                percent: 10,
-            },
-        ],
+        accounts: mockService.generateRandomAccounts(6),
         methods: {
             isEven: () => {
                 return true;
             },
             afterload: init,
-            isBank: (account) => { return account.type == 'bank'; },
-            isCash: (account) => { return account.type == 'cash'; },
-            isVisa: (account) => { return account.type == 'visa'; },
-            isMastercard: (account) => { return account.type == 'mastercard'; },
-            isPaypal: (account) => { return account.type == 'paypal'; },
+            isBank: (account) => { return account.type() == 'bank'; },
+            isCash: (account) => { return account.type() == 'cash'; },
+            isVisa: (account) => { return account.type() == 'visa'; },
+            isMastercard: (account) => { return account.type() == 'mastercard'; },
+            isPaypal: (account) => { return account.type() == 'paypal'; },
+            isTypeUndefined: (account) => { return !account.type(); },
         }
     };
 

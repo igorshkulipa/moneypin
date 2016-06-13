@@ -50,6 +50,7 @@
     "grunt-rev": "~0.1.0",
     "grunt-usemin": "~0.1.10",
     "hasher": "^1.2.0",
+    "lodash": "^4.13.1",
     "matchdep": "~0.1.1",
     "pagerjs": "^1.0.0",
     "reflect-metadata": "^0.1.2",
