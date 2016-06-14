@@ -1,7 +1,8 @@
 ﻿define(['knockout', 'types/accountType'], (ko, accountType) => {
-    return (type, name, goal, sum) => {
+    return (id, type, name, goal, sum) => {
         var accType = accountType(type);
         var object = {
+            id: ko.observable(id),
             type: ko.observable(accType),
             name: ko.observable(name),
             sum: ko.observable(sum),
