@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentHelp =
-      ng.core.Component({
-          templateUrl: 'src/content/help/help.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Help Module'),
+        strings: {
+            title: ko.observable('Help'),
+            description: ko.observable('Help Description')
+        },
+    };
+});

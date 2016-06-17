@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentSettings =
-      ng.core.Component({
-          templateUrl: 'src/content/settings/settings.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Settings Module'),
+        strings: {
+            title: ko.observable('Settings'),
+            description: ko.observable('Settings Description')
+        },
+    };
+});

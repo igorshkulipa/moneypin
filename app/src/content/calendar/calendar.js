@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentCalendar =
-      ng.core.Component({
-          templateUrl: 'src/content/calendar/calendar.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Calendar Module'),
+        strings: {
+            title: ko.observable('Calendar'),
+            description: ko.observable('Calendar Description')
+        },
+    };
+});

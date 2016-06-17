@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentDebts =
-      ng.core.Component({
-          templateUrl: 'src/content/debts/debts.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Debts Module'),
+        strings: {
+            title: ko.observable('Debts'),
+            description: ko.observable('Debts Description')
+        },
+    };
+});

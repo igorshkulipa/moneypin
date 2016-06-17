@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentAnalysis =
-      ng.core.Component({
-          templateUrl: 'src/content/analysis/analysis.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Analysis Module'),
+        strings: {
+            title: ko.observable('Analysis'),
+            description: ko.observable('Some Chart Stuff')
+        },
+    };
+});

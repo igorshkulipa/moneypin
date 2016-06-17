@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentCategory =
-      ng.core.Component({
-          templateUrl: 'src/content/category/category.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Category Module'),
+        strings: {
+            title: ko.observable('Category'),
+            description: ko.observable('Category Description')
+        },
+    };
+});

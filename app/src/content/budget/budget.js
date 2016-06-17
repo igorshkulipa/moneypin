@@ -1,9 +1,9 @@
-((app) => {
-    app.ContentBudget =
-      ng.core.Component({
-          templateUrl: 'src/content/budget/budget.html'
-      })
-      .Class({
-          constructor: () => { }
-      });
-})(window.app || (window.app = {}));
+define(['knockout'], (ko) => {
+    return {
+        title: ko.observable('Budget Module'),
+        strings: {
+            title: ko.observable('Budget'),
+            description: ko.observable('Budget Description')
+        },
+    };
+});
