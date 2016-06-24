@@ -1,33 +1,123 @@
 ﻿
-
-<section class="panel panel-default  no-border no-radius">
-    <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:accounts">
-        <div class="col-sm-6 col-md-3  no-border no-radius panel-body" data-bind="css:{'lt': ($index() % 2 != 0)}">
-            <section class="panel panel-info">
-                <div class="inline">
-                    <div class="easypiechart easyPieChart" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="2000" data-scale-color="#FEFEFE" data-size="100">
-                        <span class="fa-stack fa-2x m-r-s m-t-s">
-                            <i class="fa fa-circle fa-stack-2x text-info"></i>
-                            <i class="fa fa-stack-1x text-white"
-                               data-bind="css : {
+<section class="panel-default  no-border no-radius">
+    <!--Accounts-->
+    <div class="row bg-empty">
+        <div class="m-l-none m-r-none lter no-border no-radius" data-bind="foreach:accounts">
+            <div class="col-sm-6 col-md-3  no-border no-radius panel-body">
+                <section class="panel panel-info">
+                    <div class="inline">
+                        <div class="easypiechart easyPieChart" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="2000" data-scale-color="#FEFEFE" data-size="100">
+                            <span class="fa-stack fa-2x m-r-s m-t-s">
+                                <i data-bind="attr:{class:roundIcon.textcss}">
+                                </i>
+                                <i class="fa fa-stack-1x text-white"
+                                   data-bind="css : {
                                    'fa-money' : $parent.methods.isCash($data),
                                    'fa-bank' : $parent.methods.isBank($data),
                                    'fa-cc-visa' : $parent.methods.isVisa($data),
                                    'fa-cc-mastercard' : $parent.methods.isMastercard($data),
                                    'fa-paypal' : $parent.methods.isPaypal($data),
                                    'fa-question' : $parent.methods.isTypeUndefined($data)  }"></i>
-                        </span>
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div class="inline p-l pos-abs p-r-xl wrd-brk lines-2">
-                    <a class="clear" href="javascript:void(0)">
-                        <span class="h3 block m-t-xs">
-                            <strong data-bind="text:sum"></strong>
-                        </span>
-                        <small class="text-muted text-uc" data-bind="text:name"></small>
-                    </a>
-                </div>
-            </section>
+                    <div class="inline p-l pos-abs p-r-xl wrd-brk lines-2">
+                        <a class="clear" href="javascript:void(0)">
+                            <span class="h3 block m-t-xs">
+                                <strong data-bind="text:sum"></strong>
+                            </span>
+                            <small class="text-muted text-uc" data-bind="text:name"></small>
+                        </a>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
+    <!--End Accounts-->
+    <!--Transactions-->
+    <div class="row">
+        <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:transactions">
+            <div class="col-sm-6 col-md-3  no-border no-radius panel-body lt">
+
+                <section class="panel panel-default">
+                    <header data-bind="attr:{class:headerColor.bgcss}">
+                        <div class="clearfix">
+                            <a href="javascript:void(0)" class="pull-left avatar">
+                                <span class="fa-stack fa-2x m-r-s m-t-s">
+                                    <i class="fa fa-circle fa-stack-2x text-white"></i>
+                                    <i class="fa fa-stack-1x text-dark"
+                                       data-bind="css : {
+                                        'fa-money' : true}"></i>
+                                </span>
+                            </a>
+                            <div class="clear">
+                                <div class="h3 m-t-xs m-b-xs">
+                                    <header class="panel-heading font-bold  text-white">
+                                        <span data-bind="text:amount"></span>
+                                        <span data-bind="text:currency"></span>
+                                    </header>
+                                    <i class="fa text-white pull-right text-xs m-t-sm"
+                                       data-bind="css : {
+                                        'fa-plus-circle' : $data.operation()==true,
+                                        'fa-minus-circle' : $data.operation()==false}"></i>
+                                </div>
+                                <header class="h5 text-dark p-l" data-bind="text:category"></header>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="list-group no-radius alt">
+                        <span class="list-group-item">
+                            <span class="badge bg-success">&nbsp;</span>
+                            <i class="fa fa-calendar icon-muted"></i>
+                            <small class="text-dark" data-bind="text:localeDate"></small>
+                        </span>
+                        <span class="list-group-item">
+                            <span class="badge bg-info">&nbsp;</span>
+                            <i class="fa fa-list icon-muted"></i>
+                            <small class="text-dark" data-bind="text:account"></small>
+                        </span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--End Transactions-->
+    <!--Categories-->
+    <div class="row">
+        <div class="dd" id="nestable1">
+            <ol class="dd-list">
+                <li class="dd-item" data-id="1">
+                    <div class="dd-handle">Item 1</div>
+                </li>
+                <li class="dd-item" data-id="2">
+                    <button style="display: block;" data-action="collapse" type="button">Collapse</button>
+                    <button style="display: none;" data-action="expand" type="button">Expand</button>
+                    <div class="dd-handle">Item 2</div>
+                    <ol style="" class="dd-list">
+                        <li class="dd-item" data-id="3"><div class="dd-handle">Item 3</div></li>
+                        <li class="dd-item" data-id="4"><div class="dd-handle">Item 4</div></li>
+                        <li class="dd-item" data-id="5">
+                            <button style="display: block;" data-action="collapse" type="button">Collapse</button>
+                            <button style="display: none;" data-action="expand" type="button">Expand</button>
+                            <div class="dd-handle">Item 5</div> <ol style="" class="dd-list">
+                                <li class="dd-item" data-id="6">
+                                    <div class="dd-handle">Item 6</div>
+                                </li>
+                                <li class="dd-item" data-id="7">
+                                    <div class="dd-handle">Item 7</div>
+                                </li>
+                                <li class="dd-item" data-id="8">
+                                    <div class="dd-handle">Item 8</div>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="dd-item" data-id="9">
+                            <div class="dd-handle">Item 9</div>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!--End Categories-->
 </section>

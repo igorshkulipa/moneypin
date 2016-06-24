@@ -1,6 +1,6 @@
 define(['knockout', 'jquery', 'jqeasypiechart', 'services/mockService'], (ko, $, $chart, mockService) => {
 
-    return {
+    var model = {
         strings: {
             title: ko.observable('Main'),
             description: ko.observable('Accounts and general information')
@@ -19,7 +19,9 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'services/mockService'], (ko, $,
             isTypeUndefined: (account) => { return !account.type(); },
         }
     };
+    model.transactions = mockService.generateRandomTransactions(12, model.accounts);
 
+    return model;
 
     function init() {
         $('.easypiechart').each(function () {
