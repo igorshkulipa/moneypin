@@ -8,3 +8,4 @@ app/build
 .vs/config/applicationhost.config
 .vs/sencoiney/v14/.suo
 sencoiney.sln
+npm-debug.log
