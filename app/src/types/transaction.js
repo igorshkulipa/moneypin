@@ -30,7 +30,7 @@
             currency: ko.observable('$'),
             amount: ko.observable(amount),
             category: ko.observable(category),
-            account: ko.observable(account),
+            account: ko.observable(accountInstance),
             user: ko.observable(user),
             description: ko.observable(description),
             operation: ko.observable(operation),

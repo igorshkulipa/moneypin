@@ -1,4 +1,52 @@
 ﻿
 <div data-bind="page: {id: 'expenses'}">
     <h1 data-bind="text:title"></h1>
+    <!--Transactions-->
+    <div class="row">
+        <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:transactions">
+            <div class="col-sm-6 col-md-3  no-border no-radius panel-body lt">
+
+                <section class="panel panel-default">
+                    <header data-bind="attr:{class:headerColor.bgcss}">
+                        <div class="clearfix">
+                            <a href="javascript:void(0)" class="pull-left avatar">
+                                <span class="fa-stack fa-2x m-r-s m-t-s">
+                                    <i class="fa fa-circle fa-stack-2x text-white"></i>
+                                    <i class="fa fa-stack-1x text-dark"
+                                       data-bind="css : {
+                                        'fa-money' : true}"></i>
+                                </span>
+                            </a>
+                            <div class="clear">
+                                <div class="h3 m-t-xs m-b-xs">
+                                    <header class="panel-heading font-bold  text-white">
+                                        <span data-bind="text:amount"></span>
+                                        <span data-bind="text:currency"></span>
+                                    </header>
+                                    <i class="fa text-white pull-right text-xs m-t-sm"
+                                       data-bind="css : {
+                                        'fa-plus-circle' : $data.operation()==true,
+                                        'fa-minus-circle' : $data.operation()==false}"></i>
+                                </div>
+                                <header class="h5 text-dark p-l" data-bind="text:category"></header>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="list-group no-radius alt">
+                        <span class="list-group-item">
+                            <span class="badge bg-success">&nbsp;</span>
+                            <i class="fa fa-calendar icon-muted"></i>
+                            <small class="text-dark" data-bind="text:localeDate"></small>
+                        </span>
+                        <span class="list-group-item">
+                            <span class="badge bg-info">&nbsp;</span>
+                            <i class="fa fa-list icon-muted"></i>
+                            <small class="text-dark" data-bind="text:account"></small>
+                        </span>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!--End Transactions-->
 </div>

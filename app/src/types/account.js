@@ -10,7 +10,7 @@
             goal: ko.observable(goal),
             color: ko.observable(accColor),
             percent: ko.pureComputed(() => {
-                return parseFloat((object.sum() / object.goal()) * 100).toFixed(2);
+                return object.goal() == 0 ? 100 : parseFloat((object.sum() / object.goal()) * 100).toFixed(2);
             }),
             roundIcon: {
                 textcss: ko.pureComputed(() => {

@@ -5,7 +5,7 @@ dist
 app/components
 app/es5
 app/build
-.vs/config/applicationhost.config
-.vs/sencoiney/v14/.suo
+.vs
+.git
 sencoiney.sln
 npm-debug.log
