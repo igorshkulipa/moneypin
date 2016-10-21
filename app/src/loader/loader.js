@@ -1,10 +1,11 @@
-﻿define(['knockout', 'jquery', 'config/config'], (ko, $, config) => {
+﻿define(['knockout', 'jquery', 'config/config', 'services/saveLoadService'], (ko, $, config, saveLoadService) => {
     var moduleCache = {};
 
     return {
         loadModule: loadModule,
         loadLayout: loadLayout,
-        loadModals: loadModals
+        loadModals: loadModals,
+        loadData: loadData
     };
 
     function loadModals() {
@@ -22,6 +23,10 @@
         moduleCache[module.name] = moduleCache[module.name] || module;
         calcPosition(module);
         return loadViewModel(module, rootVM);
+    }
+
+    function loadData() {
+        saveLoadService.load();
     }
 
     function calcPosition(module) {

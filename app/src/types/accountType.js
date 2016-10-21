@@ -4,6 +4,6 @@
         for (var i = 0; i < types.length; i++) {
             if (types[i] == type) return type;
         }
-        return types[type];
+        return types[0];
     }
 });

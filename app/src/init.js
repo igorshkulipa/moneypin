@@ -8,6 +8,7 @@ require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'conf
     function initApplication() {
         loader.loadLayout();
         loader.loadModals();
+        loader.loadData();
 
         for (var content in config.content) {
             router.add(config.content[content].name);

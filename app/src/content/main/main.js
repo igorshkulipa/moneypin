@@ -1,11 +1,11 @@
-define(['knockout', 'jquery', 'jqeasypiechart', 'services/mockService'], (ko, $, $chart, mockService) => {
+define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services/mockService'], (ko, $, $chart, dataStorage, mockService) => {
 
     var model = {
         strings: {
             title: ko.observable('Main'),
             description: ko.observable('Accounts and general information')
         },
-        accounts: mockService.generateRandomAccounts(6),
+        accounts: dataStorage.getAccounts(),
         methods: {
             isEven: () => {
                 return true;
@@ -19,7 +19,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'services/mockService'], (ko, $,
             isTypeUndefined: (account) => { return !account.type(); },
         }
     };
-    model.transactions = mockService.generateRandomTransactions(12, model.accounts);
+    model.transactions = [];//mockService.generateRandomTransactions(12, model.accounts);
 
     return model;
 

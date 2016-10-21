@@ -1,11 +1,13 @@
 ﻿
 <section class="panel-default  no-border no-radius">
-    
-    <a href="#/accounts">
-        <i class="fa fa-amazon icon"> <b class="bg-warning dker"></b> </i>
-        <span>ACCOUNTS</span>
-    </a>
-
+    <div>
+        <button type="button" class="btn btn-sm btn-primary" data-bind="click: methods.newAccount">
+            <span data-bind="text:strings.newAccountLabel"></span>
+        </button>
+        <button type="button" class="btn btn-sm btn-primary" data-bind="click: methods.saveAccount">
+            <span data-bind="text:strings.saveAccountLabel"></span>
+        </button>
+    </div>
     <!--Accounts-->
     <div class="row bg-empty">
         <div class="m-l-none m-r-none lter no-border no-radius" data-bind="foreach:accounts">
@@ -41,5 +43,5 @@
     </div>
     <!--End Accounts-->
 
-   
+
 </section>

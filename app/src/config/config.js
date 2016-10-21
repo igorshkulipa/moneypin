@@ -56,6 +56,12 @@
             },
         },
         content: {
+            accounts: {
+                name: 'accounts',
+                menuText: 'Accounts',
+                html: 'content/accounts/accounts.html',
+                js: 'content/accounts/accounts'
+            },
             analysis: {
                 name: 'analysis',
                 menuText: 'Analysis',
