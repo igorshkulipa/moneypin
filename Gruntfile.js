@@ -37,7 +37,9 @@ module.exports = function (grunt) {
         'lib/remodal/remodal.js',
         'lib/jquery/jquery.easy-pie-chart.js',
         'lib/jquery/jquery.sparkline.min.js',
-        'lib/jquery/jquery-ui.js'
+        'lib/jquery/jquery-ui.js',
+        'lib/jquery/jquery.min.js',
+        'lib/tether/js/tether.min.js'
     ];
 
     var pathToSrc = [
@@ -78,15 +80,26 @@ module.exports = function (grunt) {
             js: {
                 files: ['app/**/*.css', 'app/*.css', 'app/**/*.less', 'app/*.less', 'app/**/*.sass', 'app/*.sass']
                     .concat(pathToRequire).concat(pathToLib).concat(pathToLayout).concat(pathToBuild).concat(pathToSrc).concat(['Gruntfile.js']),
-                tasks: ['babel', 'copy', 'concat', 'express']
+                tasks: ['babel', 'less', 'copy', 'concat', 'express']
             },
             html: {
                 files: ['app/**/*.html', 'app/*.html'],
-                tasks: ['babel', 'copy', 'concat', 'express']
+                tasks: ['babel', 'less', 'copy', 'concat', 'express']
             },
             css: {
                 files: ['app/**/*.css', 'app/*.css', 'app/**/*.less', 'app/*.less', 'app/**/*.sass', 'app/*.sass'],
-                tasks: ['babel', 'copy', 'concat', 'express']
+                tasks: ['babel', 'less', 'copy', 'concat', 'express']
+            }
+        },
+        less: {
+            options: {
+                cleancss: false,
+                compress: false,
+                relativeUrls: false,
+                sourceMap: false
+            },
+            app: {
+                files: { 'app/styles/css/main.css': 'app/styles/less/main.less' }
             }
         },
         express: {
@@ -199,7 +212,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-    grunt.registerTask('dev', ['clean', 'babel', 'copy', 'concat', 'express', 'watch']);
+    grunt.registerTask('dev', ['clean', 'babel', 'less', 'copy', 'concat', 'express', 'watch']);
     grunt.registerTask('default', ['dev']);
 };

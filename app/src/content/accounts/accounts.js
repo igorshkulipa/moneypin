@@ -1,4 +1,4 @@
-define(['knockout', 'jquery', 'jqeasypiechart', 'services/saveLoadService', 'storage/dataStorage', 'router/router'], (ko, $, $chart, saveLoadService, dataStorage, router) => {
+define(['knockout', 'jquery', 'jqeasypiechart', 'services/saveLoadService', 'storage/dataStorage', 'router/router', 'types/account'], (ko, $, $chart, saveLoadService, dataStorage, router, Account) => {
 
     var model = {
         strings: {
@@ -10,7 +10,8 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'services/saveLoadService', 'sto
         accounts: dataStorage.getAccounts(),
         methods: {
             newAccount: () => {
-                dataStorage.newAccount();
+                var newAccount = new Account();
+                dataStorage.newAccount(newAccount);
                 model.accounts.valueHasMutated();
             },
             saveAccount: () => {

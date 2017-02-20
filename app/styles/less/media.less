@@ -1,0 +1,35 @@
+﻿@media screen and (max-width: 800px) {
+    .hint {
+        display: none !important;
+        height: 0px !important;
+    }
+
+    .page-min-margin {
+        margin-left: 32px;
+    }
+
+    .page-01-min-margin {
+        margin-left: 64px;
+    }
+
+    #page-01 {
+        .page-01-min-margin;
+    }
+
+    #tab-expenses:target .page#page-02,
+    #tab-budget:target .page#page-03,
+    #tab-debts:target .page#page-04,
+    #tab-calendar:target .page#page-05,
+    #tab-analysis:target .page#page-06,
+    #tab-category:target .page#page-07,
+    #tab-settings:target .page#page-08,
+    #tab-help:target .page#page-09 {
+        .page-min-margin;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .div-account {
+        width: 90%;
+    }
+}

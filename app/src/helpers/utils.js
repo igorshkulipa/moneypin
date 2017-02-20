@@ -2,6 +2,7 @@
     return {
         isFunction: isFunction,
         toKoObject: toKoObject,
+        toKoArray: toKoArray,
         toPlainObject: toPlainObject
     };
 
@@ -25,19 +26,19 @@
         return result;
     }
 
+    function toKoArray(plainArray) {
+        var result = [];
+        _.forEach(plainArray, (elem) => {
+            result.push(toKoObject(elem));
+        });
+        return ko.observableArray(result);
+    }
+
     function toKoObject(plainObject) {
-        var result;
-        if (isArray(plainObject)) {
-            result = [];
-            _.forEach(plainObject, (o) => {
-                result.push(o);
-            });
-        } else {
-            result = {};
-            for (var prop in plainObject) {
-                result[prop] = ko.observable(plainObject[prop]);
-            }
+        var result = {};
+        for (var prop in plainObject) {
+            result[prop] = ko.observable(plainObject[prop]);
         }
-        return result;
+        return ko.observable(result);
     }
 });

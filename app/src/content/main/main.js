@@ -5,7 +5,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
             title: ko.observable('Main'),
             description: ko.observable('Accounts and general information')
         },
-        accounts: dataStorage.getAccounts(),
+        accounts: mockService.generateRandomAccounts(15),//dataStorage.getAccounts(),
         methods: {
             isEven: () => {
                 return true;
@@ -16,10 +16,10 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
             isVisa: (account) => { return account.type() == 'visa'; },
             isMastercard: (account) => { return account.type() == 'mastercard'; },
             isPaypal: (account) => { return account.type() == 'paypal'; },
-            isTypeUndefined: (account) => { return !account.type(); },
+            isTypeUndefined: (account) => { return true; },
         }
     };
-    model.transactions = [];//mockService.generateRandomTransactions(12, model.accounts);
+    model.transactions = mockService.generateRandomTransactions(12, model.accounts);
 
     return model;
 
@@ -32,7 +32,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
               , $value = 0;
             $data.barColor || ($data.barColor = function ($percent) {
                 $percent /= 100;
-                return "rgb(" + Math.round(200 * $percent) + ", 200, " + Math.round(200 * (1 - $percent)) + ")";
+                return "rgb(" + Math.round(255 * (1 - $percent)) + "," + Math.round(255 * $percent) + ",100)";
             }
             );
             $data.onStep = function (value) {

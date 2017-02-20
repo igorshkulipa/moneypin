@@ -1,55 +1,78 @@
-﻿<!doctype html>
-<html class="app">
+﻿<!DOCTYPE html>
+<html>
 <head>
     <title>Sencoiney. Personal Finance Application</title>
     <meta charset="utf-8" />
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="styles/css/app.v2.css" type="text/css" />
-    <link rel="stylesheet" href="styles/css/font.css" type="text/css" cache="false" />
-    <link rel="stylesheet" href="styles/css/main.css" type="text/css" />
-    <link rel="stylesheet" href="styles/css/font-awesome.css" type="text/css" />
-    <link rel="stylesheet" href="styles/css/animate.css" type="text/css" />
+
+    <link rel="stylesheet" href="styles/css/normalize.min.css">
+    <link rel='stylesheet' href='styles/css/font-awesome.css'>
+
     <link rel="stylesheet" href="styles/css/remodal.css" type="text/css" />
     <link rel="stylesheet" href="styles/css/remodal-default-theme.css" type="text/css" />
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/js/nestable/nestable.css" type="text/css" />
+
+    <script src="lib/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/tether/js/tether.min.js" type="text/javascript"></script>
+    <script src="styles/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="styles/css/main.css">
 </head>
 <body>
-    <section class="vbox" id="main">
-        <header class="bg-dark dk header navbar navbar-fixed-top-xs">
-            <div id="layout-top"></div>
-        </header>
-        <section>
-            <section class="hbox stretch">
-                <!-- .aside -->
-                <aside class="bg-dark lter aside-md hidden-print" id="nav">
-                    <section class="vbox">
-                        <header class="header bg-primary lter text-center clearfix">
-                            <div class="btn-group hidden-nav-xs">
-                                <section id="layout-back"></section>
+    <nav class="main-nav">
+        <section id="layout-menu"></section>
+    </nav>
+    <article class="main-article">
+        <div class="ct" id="tab-main">
+            <div class="ct" id="tab-expenses">
+                <div class="ct" id="tab-budget">
+                    <div class="ct" id="tab-debts">
+                        <div class="ct" id="tab-calendar">
+                            <div class="ct" id="tab-analysis">
+                                <div class="ct" id="tab-category">
+                                    <div class="ct" id="tab-settings">
+                                        <div class="ct" id="tab-help">
+                                            <div class="page" id="page-00">
+                                            </div>
+                                            <div class="page" id="page-01">
+                                                <section class="section-content"><section class="section-scrollable" id="content-main"></section></section>
+                                            </div>
+                                            <div class="page" id="page-02">
+                                                <section class="section-content"><section class="section-scrollable" id="content-expenses"></section></section>
+                                            </div>
+                                            <div class="page" id="page-03">
+                                                <section class="section-content"><section class="section-scrollable" id="content-budget"></section></section>
+                                            </div>
+                                            <div class="page" id="page-04">
+                                                <section class="section-content"><section class="section-scrollable" id="content-debts"></section></section>
+                                            </div>
+                                            <div class="page" id="page-05">
+                                                <section class="section-content"><section class="section-scrollable" id="content-calendar"></section></section>
+                                            </div>
+                                            <div class="page" id="page-06">
+                                                <section class="section-content"><section class="section-scrollable" id="content-analysis"></section></section>
+                                            </div>
+                                            <div class="page" id="page-07">
+                                                <section class="section-content"><section class="section-scrollable" id="content-category"></section></section>
+                                            </div>
+                                            <div class="page" id="page-08">
+                                                <section class="section-content"><section class="section-scrollable" id="content-settings"></section></section>
+                                            </div>
+                                            <div class="page" id="page-09">
+                                                <section class="section-content"><section class="section-scrollable" id="content-help"></section></section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </header>
-                        <section class="w-f scrollable">
-                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="5px" data-color="#333333">
-                                <section id="layout-menu"></section>
-                            </div>
-                        </section>
-                        <footer class="footer btn-toolbar lt hidden-xs b-t b-dark">
-                            <section id="layout-menu-footer"></section>
-                        </footer>
-                    </section>
-                </aside> <!-- /.aside -->
-                <section id="content">
-                    <section class="vbox">
-                        <section class="scrollable padder">
-                            <section id="layout-title"></section>
-                            <section id="content-main"></section>
-                        </section>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
     <script data-main="init.js" src="require.js"></script>
     <div id="modal-action" data-remodal-id="modalAction"></div>
 </body>

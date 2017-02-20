@@ -1,4 +1,4 @@
-﻿define(['signals', 'hasher', 'crossroads'], (signals, hasher, crossroads) => {
+﻿define(['signals', 'hasher', 'crossroads', 'config/config'], (signals, hasher, crossroads, config) => {
     var router = {
         init: init,
         add: add,
@@ -8,7 +8,7 @@
     return router;
 
     function add(module, params) {
-        crossroads.addRoute('/' + module);
+        crossroads.addRoute('/' + config.content[module].path);
         return router;
     }
 

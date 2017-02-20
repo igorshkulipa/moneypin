@@ -1,13 +1,13 @@
-﻿define(['knockout', 'types/accountType', 'types/accountColor', 'helpers/guid'], (ko, accountType, accountColor, guid) => {
+﻿define(['knockout', 'types/accountType', 'types/accountColor', 'helpers/guid'], (ko, AccountType, AccountColor, guid) => {
     return (id, type, name, goal, sum, color) => {
-        var accType = accountType(type);
-        var accColor = accountColor(color);
+        var accType = AccountType(type);
+        var accColor = AccountColor(color);
         var object = {
             id: ko.observable(id || guid()),
             type: ko.observable(accType),
-            name: ko.observable(name),
-            sum: ko.observable(sum),
-            goal: ko.observable(goal),
+            name: ko.observable(name || ''),
+            sum: ko.observable(sum || 0),
+            goal: ko.observable(goal || 0),
             color: ko.observable(accColor),
             percent: ko.pureComputed(() => {
                 return object.goal() == 0 ? 100 : parseFloat((object.sum() / object.goal()) * 100).toFixed(2);

@@ -1,55 +1,313 @@
-
-.p-l-none {
-    padding-left: 0;
+* {
+  transition: all 500ms ease-out;
+  -webkit-transition: all 500ms ease-out;
 }
-
-.p-l-xs {
-    padding-left: 5px;
+html,
+body,
+section,
+.page {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 1s cubic-bezier(0.5, -0.005, 0.2, 1) !important;
+  -webkit-transition: all 1s cubic-bezier(0.5, -0.005, 0.2, 1) !important;
+  color: #fff;
+  overflow: hidden;
 }
-
-.p-l-sm {
-    padding-left: 10px;
+.page-01-layout {
+  left: 0;
+  margin-left: 10%;
 }
-
-.p-l {
-    padding-left: 15px;
+.page-position-layout {
+  left: 100%;
+  position: absolute;
 }
-
-.p-l-xl {
-    padding-left: 20px;
+.page {
+  position: absolute;
 }
-
-.p-r-none {
-    padding-right: 0;
+#page-00 {
+  left: 0;
+  background: #374046;
 }
-
-.p-r-xs {
-    padding-right: 5px;
+#page-01 {
+  background-color: transparent;
+  left: 0;
+  margin-left: 10%;
 }
-
-.p-r-sm {
-    padding-right: 10px;
+#page-02 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
 }
-
-.p-l {
-    padding-right: 15px;
+#page-03 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
 }
-
-.p-r-xl {
-    padding-right: 20px;
+#page-04 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
 }
-
-
-.pos-abs {
-    position: absolute;
+#page-05 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
 }
-
-.wrd-brk {
-    word-break: break-word;
+#page-06 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
 }
-
-.lines-2 {
-    overflow: hidden;
-    max-height: 5.8em;
-    line-height: 1.5em;
+#page-07 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
+}
+#page-08 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
+}
+#page-09 {
+  background-color: #374046;
+  left: 100%;
+  position: absolute;
+}
+#tab-main:target .page#page-01 {
+  transform: translateX(0);
+}
+#tab-expenses:target .page#page-02 {
+  transform: translateX(-90%);
+}
+#tab-budget:target .page#page-03 {
+  transform: translateX(-90%);
+}
+#tab-debts:target .page#page-04 {
+  transform: translateX(-90%);
+}
+#tab-calendar:target .page#page-05 {
+  transform: translateX(-90%);
+}
+#tab-analysis:target .page#page-06 {
+  transform: translateX(-90%);
+}
+#tab-category:target .page#page-07 {
+  transform: translateX(-90%);
+}
+#tab-settings:target .page#page-08 {
+  transform: translateX(-90%);
+}
+#tab-help:target .page#page-09 {
+  transform: translateX(-90%);
+}
+#tab-expenses:target .page#page-00,
+#tab-budget:target .page#page-00,
+#tab-debts:target .page#page-00,
+#tab-calendar:target .page#page-00,
+#tab-analysis:target .page#page-00,
+#tab-category:target .page#page-00,
+#tab-settings:target .page#page-00,
+#tab-help:target .page#page-00 {
+  background: black;
+}
+#tab-expenses:target .page#page-00 .icon,
+#tab-budget:target .page#page-00 .icon,
+#tab-debts:target .page#page-00 .icon,
+#tab-calendar:target .page#page-00 .icon,
+#tab-analysis:target .page#page-00 .icon,
+#tab-category:target .page#page-00 .icon,
+#tab-settings:target .page#page-00 .icon,
+#tab-help:target .page#page-00 {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+#tab-expenses:target section .section-content,
+#tab-budget:target section .section-content,
+#tab-debts:target section .section-content,
+#tab-calendar:target section .section-content,
+#tab-analysis:target section .section-content,
+#tab-category:target section .section-content,
+#tab-settings:target section .section-content,
+#tab-help:target section .section-content {
+  transform: scale(0.6);
+  transition-delay: .25s;
+  background-color: transparent;
+}
+#tab-expenses:target #menu-item-02 {
+  transform: scale(1.2) !important;
+}
+#tab-budget:target #menu-item-03 {
+  transform: scale(1.2) !important;
+}
+#tab-debts:target #menu-item-04 {
+  transform: scale(1.2) !important;
+}
+#tab-calendar:target #menu-item-05 {
+  transform: scale(1.2) !important;
+}
+#tab-analysis:target #menu-item-06 {
+  transform: scale(1.2) !important;
+}
+#tab-category:target #menu-item-07 {
+  transform: scale(1.2) !important;
+}
+#tab-settings:target #menu-item-08 {
+  transform: scale(1.2) !important;
+}
+#tab-help:target #menu-item-09 {
+  transform: scale(1.2) !important;
+}
+section {
+  width: 100%;
+}
+ul {
+  position: fixed;
+  z-index: 1;
+}
+.menu-icon {
+  color: #fff;
+  font-size: 32px;
+  display: block;
+}
+ul .icon:hover {
+  opacity: 0.6;
+}
+#page-01 .icon .title {
+  margin-bottom: 20px;
+}
+ul {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /*right: 0;*/
+  margin: auto;
+  margin-top: 30px !important;
+  margin-left: 15px !important;
+  height: auto;
+  width: 10%;
+  padding: 0;
+  text-align: center;
+}
+ul li {
+  margin: 30px 0;
+}
+a {
+  text-decoration: none;
+  font-family: open sans, sans-serif;
+}
+.title,
+.hint {
+  font-family: open sans, sans-serif;
+  display: block;
+}
+.title {
+  font-size: 38px;
+}
+.hint {
+  font-size: 13px;
+  align-content: center;
+}
+.hint a {
+  color: #EFFF06;
+  transition: all 250ms easet-out;
+}
+.hint a:hover {
+  color: #FFF;
+}
+.credit {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+}
+.credit a {
+  color: #fff;
+}
+.main-nav {
+  width: 250px;
+}
+a.header-ref {
+  color: white;
+}
+.section-padding-layout {
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+section.section-content {
+  width: 90%;
+  padding-top: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+}
+.section-scrollable {
+  overflow-y: auto;
+}
+.section-padding-page {
+  padding-left: 10px;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: none;
+  background-color: transparent;
+}
+.div-account {
+  height: 150px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 8px;
+  padding-top: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.div-border {
+  border: solid;
+  border-width: 1px;
+  border-color: #fff;
+  border-radius: 5px;
+}
+@media screen and (max-width: 800px) {
+  .hint {
+    display: none !important;
+    height: 0px !important;
+  }
+  .page-min-margin {
+    margin-left: 32px;
+  }
+  .page-01-min-margin {
+    margin-left: 64px;
+  }
+  #page-01 {
+    margin-left: 64px;
+  }
+  #tab-expenses:target .page#page-02,
+  #tab-budget:target .page#page-03,
+  #tab-debts:target .page#page-04,
+  #tab-calendar:target .page#page-05,
+  #tab-analysis:target .page#page-06,
+  #tab-category:target .page#page-07,
+  #tab-settings:target .page#page-08,
+  #tab-help:target .page#page-09 {
+    margin-left: 32px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .div-account {
+    width: 90%;
+  }
 }

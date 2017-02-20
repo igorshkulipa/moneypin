@@ -1,5 +1,6 @@
 ﻿define(['knockout'], (ko) => {
     return (color) => {
+        color = color || 'red';
         var bgcsss = ['bg-danger', 'bg-info', 'bg-primary', 'bg-success', 'bg-warning'];
         var textcsss = ['text-danger', 'text-info', 'text-primary', 'text-success', 'text-warning'];
         var colors = ['red', 'blue', 'turquoise', 'green', 'yellow'];

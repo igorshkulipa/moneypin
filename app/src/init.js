@@ -1,4 +1,4 @@
-require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, layout, loader, router, config) => {
+require(['knockout', 'jquery', 'bootstrap', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, bootstrap, layout, loader, router, config) => {
 
     var $rootVM = {
     };
@@ -16,16 +16,22 @@ require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'conf
 
         router
             .init((request, data) => {
-                loader.loadModule(config.content[request], $rootVM)
-                .then(() => {
-                    var animationName = 'fadeInRight';
-                    var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-                    $('#' + config.config.main.position).addClass('animated ' + animationName).one(animationEnd, function () {
-                        $('#' + config.config.main.position).removeClass('animated ' + animationName);
+                var module = null;
+                for (var prop in config.content) {
+                    if (config.content[prop].path == request) module = config.content[prop];
+                }
+                if (module) {
+                    loader.loadModule(module, $rootVM)
+                    .then(() => {
+                        //var animationName = 'fadeInRight';
+                        //var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        //$('#' + config.config.main.position).addClass('animated ' + animationName).one(animationEnd, function () {
+                        //    $('#' + config.config.main.position).removeClass('animated ' + animationName);
+                        //});
                     });
-                });
+                }
             }, (request) => {
-                router.redirect('main');
+                router.redirect('tab-main');
             });
     }
 
@@ -35,12 +41,18 @@ require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'conf
 });
 
 require.config({
+    shim: {
+        bootstrap: {
+            deps: ['jquery']
+        }
+    },
     baseUrl: './',
     paths: {
         // Libs
         knockout: 'lib/knockout/knockout-3.4.0',
         lodash: 'lib/lodash/lodash',
         jquery: 'lib/jquery/jquery-2.2.4',
+        bootstrap: 'styles/js/bootstrap/bootstrap.min',
         layout: 'lib/layout/app.v2',
         pager: 'lib/pager/pager',
         crossroads: 'lib/crossroads/crossroads',

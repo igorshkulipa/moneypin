@@ -26,6 +26,7 @@
     }
 
     function loadData() {
+        //saveLoadService.clear();
         saveLoadService.load();
     }
 
@@ -58,7 +59,7 @@
     }
 
     function updateModule(module) {
-        if (module.element[0]) ko.cleanNode(module.element[0]);
+        if (module.element.get(0)) ko.cleanNode(module.element.get(0));
         module.element.html(module.template);
         ko.applyBindings(module.viewModel, module.element.get(0));
     }

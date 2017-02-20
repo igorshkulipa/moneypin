@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "core-js": "^2.4.0",
+    "grunt-contrib-less": "^1.4.0",
     "require": "^2.4.20"
   },
   "devDependencies": {
