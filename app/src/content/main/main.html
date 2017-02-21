@@ -1,10 +1,10 @@
 ﻿
 <div>
-    <a class="header-ref" href="#/accounts">
-        <i class="fa fa-angle-double-right menu-icon pull-left"> </i>
-        <h2>Accounts</h2>
-    </a>
-
+    <header class="page-header">
+        <a class="header-ref" href="#/accounts">
+            <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
+        </a>
+    </header>
     <!--Accounts-->
     <section class="section-padding-page">
         <div class="row" data-bind="foreach:accounts">
@@ -12,21 +12,22 @@
                 <a class="clear" href="javascript:void(0)">
                     <div>
                         <div class="pull-left">
-                            <i data-bind="css : {
-                                   'fa fa-money icon' : $parent.methods.isCash($data),
-                                   'fa fa-bank icon' : $parent.methods.isBank($data),
-                                   'fa fa-cc-visa icon' : $parent.methods.isVisa($data),
-                                   'fa fa-cc-mastercard icon' : $parent.methods.isMastercard($data),
-                                   'fa fa-paypal icon' : $parent.methods.isPaypal($data),
-                                   'fa fa-question icon' : $parent.methods.isTypeUndefined($data)  }">
-                            </i>
-                            <div class="easypiechart easyPieChart pull-left" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="1500" data-scale-color="transparent" data-size="100">
+                            <i class="fa text-white menu-icon"
+                               data-bind="css : {
+                                   'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
+                                   'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
+                                   'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
+                                   'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
+                                   'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
+                                   'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>
+                            <div class="easypiechart easyPieChart pull-left" data-bind="attr: { 'data-percent': percent}" data-line-width="12" data-loop="false" data-animate="1200" data-scale-color="transparent" data-size="96">
                             </div>
                         </div>
                         <p>
                             <strong data-bind="text:sum"></strong>
                         </p>
-                        <p class="text-muted text-uc" data-bind="text:name"></p>
+                        <p class="text-muted text-white" data-bind="text:name"></p>
+                        <p class="text-white" data-bind="text:goal"></p>
                     </div>
                 </a>
             </div>

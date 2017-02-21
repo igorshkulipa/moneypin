@@ -75,6 +75,13 @@ section,
   left: 100%;
   position: absolute;
 }
+.page-header {
+  position: fixed;
+  display: block;
+  top: 0px;
+  padding-top: 50px;
+  height: 100px;
+}
 #tab-main:target .page#page-01 {
   transform: translateX(0);
 }
@@ -236,14 +243,14 @@ a.header-ref {
 .section-padding-layout {
   padding-top: 5%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 0%;
   padding-left: 5%;
 }
 section.section-content {
   width: 90%;
   padding-top: 5%;
   padding-right: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 0%;
   padding-left: 5%;
 }
 .section-scrollable {
@@ -251,6 +258,7 @@ section.section-content {
 }
 .section-padding-page {
   padding-left: 10px;
+  margin-top: 50px;
 }
 ::-webkit-scrollbar {
   width: 0px;
@@ -277,9 +285,82 @@ section.section-content {
 }
 .div-border {
   border: solid;
-  border-width: 1px;
+  border-width: 3px;
   border-color: #fff;
   border-radius: 5px;
+}
+.icon-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+}
+.fa-money-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+  margin-left: 31px;
+}
+.fa-bank-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+  margin-top: 31px;
+  margin-left: 31px;
+}
+.fa-cc-visa-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+}
+.fa-cc-mastercard-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+}
+.fa-cc-paypal-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
+}
+.fa-question-inside-chart {
+  position: absolute;
+  margin-top: 32px;
+  margin-left: 28px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  border-style: none;
+  font-size: 32px;
 }
 @media screen and (max-width: 800px) {
   .hint {
@@ -309,5 +390,10 @@ section.section-content {
 @media screen and (max-width: 640px) {
   .div-account {
     width: 90%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .div-account {
+    width: 80%;
   }
 }

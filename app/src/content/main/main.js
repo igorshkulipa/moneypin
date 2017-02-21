@@ -2,7 +2,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
 
     var model = {
         strings: {
-            title: ko.observable('Main'),
+            title: ko.observable('Accounts'),
             description: ko.observable('Accounts and general information')
         },
         accounts: mockService.generateRandomAccounts(15),//dataStorage.getAccounts(),
@@ -16,7 +16,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
             isVisa: (account) => { return account.type() == 'visa'; },
             isMastercard: (account) => { return account.type() == 'mastercard'; },
             isPaypal: (account) => { return account.type() == 'paypal'; },
-            isTypeUndefined: (account) => { return true; },
+            isTypeUndefined: (account) => { return !account.type() || account.type().length == 0; },
         }
     };
     model.transactions = mockService.generateRandomTransactions(12, model.accounts);
@@ -32,7 +32,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
               , $value = 0;
             $data.barColor || ($data.barColor = function ($percent) {
                 $percent /= 100;
-                return "rgb(" + Math.round(255 * (1 - $percent)) + "," + Math.round(255 * $percent) + ",100)";
+                return "rgb(" + Math.round(255 * (1 - $percent)) + "," + Math.round(255 * $percent) + ",80)";
             }
             );
             $data.onStep = function (value) {
