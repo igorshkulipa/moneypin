@@ -1,7 +1,4 @@
-﻿@padding-page-left: 5%;
-@padding-page-right: 5%;
-@padding-page-top: 5%;
-@padding-page-bottom: 0%;
+﻿@import "variables.less";
 
 .section-padding-layout {
     padding-top: @padding-page-top;
@@ -21,5 +18,21 @@ section.section-content {
 
 .section-padding-page {
     padding-left: 10px;
-    margin-top: 50px;
+    margin-top: 32px;
+}
+
+.page-01-header {
+    position: fixed;
+    display: block;
+    top: 0px;
+    margin-top: @padding-page-top;
+    height: ~"calc(@padding-page-top + 2px)";
+    width: 100%;
+    background-color: @color-bg-page-00;
+    z-index: 99;
+    padding: 0px 0px 0px 0px;
+}
+
+.page-header {
+    .page-01-header
 }

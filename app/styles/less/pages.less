@@ -1,23 +1,15 @@
-﻿
-@color-bg-page-00: #374046;
-@color-bg-page-01: transparent;
-@color-bg-page-02: #374046; //#f1dede;
-@color-bg-page-03: #374046; // #bbacc1;
-@color-bg-page-04: #374046; //#80727b;
-@color-bg-page-05: #374046; // #909580;
-@color-bg-page-06: #374046; //#706563;
-@color-bg-page-07: #374046; // #ac9fbb;
-@color-bg-page-08: #374046; //#ddbdd5;
-@color-bg-page-09: #374046; // #896a67;
+﻿@import "variables.less";
 
 .page-01-layout {
     left: 0;
     margin-left: 10%;
+    z-index: 100;
 }
 
 .page-position-layout {
     left: 100%;
     position: absolute;
+    z-index: 999;
 }
 
 .page {
@@ -72,12 +64,4 @@
 #page-09 {
     background-color: @color-bg-page-09;
     .page-position-layout;
-}
-
-.page-header {
-    position: fixed;
-    display: block;
-    top: 0px;
-    padding-top: 50px;
-    height: 100px;
 }

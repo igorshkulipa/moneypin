@@ -18,10 +18,12 @@ section,
 .page-01-layout {
   left: 0;
   margin-left: 10%;
+  z-index: 100;
 }
 .page-position-layout {
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 .page {
   position: absolute;
@@ -34,53 +36,55 @@ section,
   background-color: transparent;
   left: 0;
   margin-left: 10%;
+  z-index: 100;
 }
 #page-02 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-03 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-04 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-05 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-06 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-07 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-08 {
   background-color: #374046;
   left: 100%;
   position: absolute;
+  z-index: 999;
 }
 #page-09 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-}
-.page-header {
-  position: fixed;
-  display: block;
-  top: 0px;
-  padding-top: 50px;
-  height: 100px;
+  z-index: 999;
 }
 #tab-main:target .page#page-01 {
   transform: translateX(0);
@@ -118,6 +122,17 @@ section,
 #tab-settings:target .page#page-00,
 #tab-help:target .page#page-00 {
   background: black;
+}
+#tab-expenses:target .page-01-header,
+#tab-budget:target .page-01-header,
+#tab-debts:target .page-01-header,
+#tab-calendar:target .page-01-header,
+#tab-analysis:target .page-01-header,
+#tab-category:target .page-01-header,
+#tab-settings:target .page-01-header,
+#tab-help:target .page-01-header {
+  background-color: transparent;
+  transition-delay: 0s;
 }
 #tab-expenses:target .page#page-00 .icon,
 #tab-budget:target .page#page-00 .icon,
@@ -242,15 +257,15 @@ a.header-ref {
 }
 .section-padding-layout {
   padding-top: 5%;
-  padding-right: 5%;
-  padding-bottom: 0%;
+  padding-right: 1%;
+  padding-bottom: 1%;
   padding-left: 5%;
 }
 section.section-content {
   width: 90%;
   padding-top: 5%;
-  padding-right: 5%;
-  padding-bottom: 0%;
+  padding-right: 1%;
+  padding-bottom: 1%;
   padding-left: 5%;
 }
 .section-scrollable {
@@ -258,19 +273,41 @@ section.section-content {
 }
 .section-padding-page {
   padding-left: 10px;
-  margin-top: 50px;
+  margin-top: 32px;
+}
+.page-01-header {
+  position: fixed;
+  display: block;
+  top: 0px;
+  margin-top: 5%;
+  height: calc(@padding-page-top + 2px);
+  width: 100%;
+  background-color: #374046;
+  z-index: 99;
+  padding: 0px 0px 0px 0px;
+}
+.page-header {
+  position: fixed;
+  display: block;
+  top: 0px;
+  margin-top: 5%;
+  height: calc(@padding-page-top + 2px);
+  width: 100%;
+  background-color: #374046;
+  z-index: 99;
+  padding: 0px 0px 0px 0px;
 }
 ::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+  width: 10px;
+  height: auto;
 }
 ::-webkit-scrollbar-track {
   background: none;
-  background-color: transparent;
+  background-color: #1C2429;
 }
 ::-webkit-scrollbar-thumb {
   background: none;
-  background-color: transparent;
+  background-color: #132028;
 }
 .div-account {
   height: 150px;
@@ -387,7 +424,7 @@ section.section-content {
     margin-left: 32px;
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 680px) {
   .div-account {
     width: 90%;
   }

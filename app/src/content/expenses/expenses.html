@@ -1,8 +1,39 @@
 ﻿
 <div data-bind="page: {id: 'expenses'}">
-    <h1 data-bind="text:title"></h1>
+
+    <header class="page-header">
+        <a class="header-ref" href="#/accounts">
+            <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
+        </a>
+    </header>
     <!--Transactions-->
-    <div class="row">
+    <section class="section-padding-page">
+        <div class="row" data-bind="foreach:transactions">
+            <div class="col-md-3 div-account div-border">
+                <a class="clear" href="javascript:void(0)">
+                    <div>
+                        <div class="pull-left">
+                            <!--<i class="fa text-white menu-icon"
+                               data-bind="css : {
+                                   'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
+                                   'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
+                                   'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
+                                   'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
+                                   'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
+                                   'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>-->
+                        </div>
+                        <p>
+                            <strong data-bind="text:amount"></strong>
+                        </p>
+                        <p class="text-muted text-white" data-bind="text:id"></p>
+                        <p class="text-white" data-bind="text:date"></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!--<div class="row">
         <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:transactions">
             <div class="col-sm-6 col-md-3  no-border no-radius panel-body lt">
 
@@ -47,6 +78,6 @@
                 </section>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--End Transactions-->
 </div>

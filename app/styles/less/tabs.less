@@ -1,4 +1,5 @@
-﻿
+﻿@import "variables.less";
+
 #tab-main:target .page#page-01 {
     transform: translateX(0);
 }
@@ -46,6 +47,18 @@
     background: black;
 }
 
+#tab-expenses:target .page-01-header,
+#tab-budget:target .page-01-header,
+#tab-debts:target .page-01-header,
+#tab-calendar:target .page-01-header,
+#tab-analysis:target .page-01-header,
+#tab-category:target .page-01-header,
+#tab-settings:target .page-01-header,
+#tab-help:target .page-01-header {
+    background-color: transparent;
+    transition-delay: 0s;
+}
+
 #tab-expenses:target .page#page-00 .icon,
 #tab-budget:target .page#page-00 .icon,
 #tab-debts:target .page#page-00 .icon,
@@ -57,8 +70,6 @@
     -webkit-filter: blur(3px);
     filter: blur(3px);
 }
-
-
 
 #tab-expenses:target section .section-content,
 #tab-budget:target section .section-content,
@@ -104,4 +115,3 @@
 #tab-help:target #menu-item-09 {
     transform: scale(1.2) !important;
 }
-
