@@ -1,4 +1,4 @@
-﻿define(['lodash', 'types/account', 'types/transaction', 'helpers/guid'], (_, Account, Transaction, guid) => {
+﻿define(['lodash', 'types/account', 'types/transaction', 'helpers/guid', 'helpers/utils'], (_, Account, Transaction, guid, utils) => {
     return {
         generateRandomAccounts: generateRandomAccounts,
         generateRandomTransactions: generateRandomTransactions
@@ -29,15 +29,14 @@
             var date = (new Date()) - Math.round(Math.random() * 4 * 24 * 60 * 60 * 1000);
             var amount = Math.round(Math.random() * 10000);
             var category = 'Category ' + Math.round(Math.random() * 100).toString();
-            var account = accounts[Math.round(Math.random() * (accounts.length - 1))].id();
-            var user = guid();
+            var account = accounts[Math.round(Math.random() * (accounts.length - 1))].id;
             var description = 'Description ' + Math.round(Math.random() * 100).toString() + ((Math.round(Math.random() * 100) > 50) ? ' Description Additional Description' : '');
             var operation = Math.round(Math.random());
-            var element = new Transaction(id, date, amount, category, account, user, description, operation, accounts);
+            var element = new Transaction(id, date, amount, category, account, description, operation, accounts);
             result.push(element);
         };
         result = result.sort((a, b) => {
-            return a.date() > b.date();
+            return a.date > b.date;
         });
         return result;
     }

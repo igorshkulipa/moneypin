@@ -1,8 +1,9 @@
-﻿define(['lodash'], (_) => {
-    return (id, name) => {
+﻿define(['lodash', 'helpers/guid'], (_, guid) => {
+    return (id, name, sign) => {
         var object = {
-            id: ko.observable(id),
-            name: ko.observable(name)
+            id: id || guid(),
+            name: name || '',
+            sign: sign || ''
         };
         return object;
     }

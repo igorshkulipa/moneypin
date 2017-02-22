@@ -1,4 +1,4 @@
-﻿define(['knockout', 'jquery', 'config/config', 'services/saveLoadService'], (ko, $, config, saveLoadService) => {
+﻿define(['knockout', 'jquery', 'config/config', 'services/saveLoadService', 'model/model'], (ko, $, config, saveLoadService, model) => {
     var moduleCache = {};
 
     return {
@@ -27,7 +27,7 @@
 
     function loadData() {
         //saveLoadService.clear();
-        saveLoadService.load();
+        saveLoadService.load(model);
     }
 
     function calcPosition(module) {

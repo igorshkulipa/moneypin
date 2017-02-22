@@ -11,7 +11,7 @@
     }
 
     function isArray(obj) {
-        return (obj && (obj.length != 0 || obj.length == 0));
+        return (obj && (obj.length != 0 || obj.length == 0) && obj.forEach);
     }
 
     function toPlainObject(koObject) {
@@ -36,9 +36,19 @@
 
     function toKoObject(plainObject) {
         var result = {};
-        for (var prop in plainObject) {
-            result[prop] = ko.observable(plainObject[prop]);
+        if (isArray(plainObject)) {
+            return toKoArray(plainObject);
+        } else {
+            for (var prop in plainObject) {
+                if (isFunction(plainObject[prop])) {
+                    result[prop] = plainObject[prop];
+                } else if (isArray(plainObject[prop])) {
+                    result[prop] = ko.observableArray(plainObject[prop]);
+                } else {
+                    result[prop] = ko.observable(plainObject[prop]);
+                }
+            }
+            return ko.observable(result);
         }
-        return ko.observable(result);
     }
 });

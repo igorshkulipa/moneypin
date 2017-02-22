@@ -45,7 +45,8 @@
         config: {
             main: {
                 position: 'content-main'
-            }
+            },
+            localStoragePrefix: 'z8q8f9Dm'
         },
         modals: {
             action: {

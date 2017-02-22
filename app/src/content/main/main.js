@@ -1,11 +1,11 @@
-define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services/mockService'], (ko, $, $chart, dataStorage, mockService) => {
+define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services/mockService', 'model/model', 'helpers/utils', 'types/account'], (ko, $, $chart, dataStorage, mockService, model, utils, Account) => {
 
-    var model = {
+    var viewModel = {
         strings: {
             title: ko.observable('Accounts'),
             description: ko.observable('Accounts and general information')
         },
-        accounts: mockService.generateRandomAccounts(16),//dataStorage.getAccounts(),
+        accounts: utils.toKoObject(model.accounts),
         methods: {
             isEven: () => {
                 return true;
@@ -17,10 +17,14 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
             isMastercard: (account) => { return account.type() == 'mastercard'; },
             isPaypal: (account) => { return account.type() == 'paypal'; },
             isTypeUndefined: (account) => { return !account.type() || account.type().length == 0; },
+            newAccount: () => {
+                viewModel.accounts.push(utils.toKoObject(new Account()));
+            },
         }
     };
-    
-    return model;
+
+
+    return viewModel;
 
     function init() {
         $('.easypiechart').each(function () {
@@ -31,7 +35,10 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
               , $value = 0;
             $data.barColor || ($data.barColor = function ($percent) {
                 $percent /= 100;
-                return "rgb(" + Math.round(255 * (1 - $percent)) + "," + Math.round(255 * $percent) + ",80)";
+                var red = 109;
+                var green = (110 + Math.round(14 * $percent));
+                var blue = 85;
+                return "rgb(" + red + "," + green + "," + blue + ")";
             }
             );
             $data.onStep = function (value) {

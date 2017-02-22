@@ -1,26 +1,35 @@
-﻿define(['lodash', 'storage/dataStorage', 'helpers/utils'], (_, dataStorage, utils) => {
+﻿define(['lodash', 'config/config'], (_, config) => {
     return {
         save: save,
         load: load,
         clear: clear
     };
 
-    function save() {
-        window.localStorage.setItem('sencoiney', JSON.stringify({}));
-        var accounts = dataStorage.getPlainAccounts();
-        window.localStorage.setItem('sencoiney.accounts', JSON.stringify(utils.toPlainObject(accounts)));
+    function save(model) {
+        window.localStorage.setItem(config.localStoragePrefix, JSON.stringify({}));
+        for (var prop in model) {
+            window.localStorage.setItem(config.localStoragePrefix + '.' + prop, JSON.stringify(model[prop]));
+        }
     }
 
-    function load() {
-        if (window.localStorage.getItem('sencoiney')) {
-            dataStorage.loadAccounts(JSON.parse(window.localStorage.getItem('sencoiney.accounts')));
+    function load(model) {
+        if (window.localStorage.getItem(config.localStoragePrefix)) {
+            model.accounts = JSON.parse(window.localStorage.getItem(config.localStoragePrefix + '.accounts'));
+            model.transactions = JSON.parse(window.localStorage.getItem(config.localStoragePrefix + '.transactions'));
+            model.categories = JSON.parse(window.localStorage.getItem(config.localStoragePrefix + '.categories'));
         } else {
-            dataStorage.init();
+            model = {
+                accounts: [],
+                transactions: [],
+                categories: []
+            };
         }
     }
 
     function clear() {
-        window.localStorage.removeItem('sencoiney');
-        window.localStorage.removeItem('sencoiney.accounts');
+        window.localStorage.removeItem(config.localStoragePrefix);
+        window.localStorage.removeItem(config.localStoragePrefix + '.accounts');
+        window.localStorage.removeItem(config.localStoragePrefix + '.transactions');
+        window.localStorage.removeItem(config.localStoragePrefix + '.categories');
     }
 });

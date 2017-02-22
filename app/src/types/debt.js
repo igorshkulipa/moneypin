@@ -1,12 +1,12 @@
 ﻿define(['lodash'], (_) => {
-    return (id, accountId, date, personId, description, returnDate) => {
+    return (id, accountId, date, personName, description, returnDate) => {
         var object = {
-            id: ko.observable(id),
-            account: ko.observable(accountId),
-            date: ko.observable(date),
-            person: ko.observable(personId),
-            description: ko.observable(description),
-            returnDate: ko.observable(returnDate)
+            id: id,
+            account: accountId,
+            date: date,
+            person: personName,
+            description: description,
+            returnDate: returnDate
         };
         return object;
     }

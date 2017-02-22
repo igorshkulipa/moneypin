@@ -4,6 +4,9 @@
         <a class="header-ref" href="#/accounts">
             <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
         </a>
+        <div class="pull-right" style="padding-right:20%; padding-top:0px;">
+            <button style="width:100px; height:30px; position:fixed;" data-bind="click:methods.newAccount"></button>
+        </div>
     </header>
     <!--Accounts-->
     <section class="section-padding-page">
@@ -27,7 +30,7 @@
                             <strong data-bind="text:sum"></strong>
                         </p>
                         <p class="text-muted text-white" data-bind="text:name"></p>
-                        <p class="text-white" data-bind="text:goal"></p>
+                        <p class="text-white" data-bind="text:plannedValue"></p>
                     </div>
                 </a>
             </div>
