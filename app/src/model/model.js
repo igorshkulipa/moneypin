@@ -1,6 +1,6 @@
 ﻿define(['services/mockService'], (mockService) => {
     var model = {
-        accounts: mockService.generateRandomAccounts(5),
+        accounts: [],
         transactions: [],
         categories: []
     };
