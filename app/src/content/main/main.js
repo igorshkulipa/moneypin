@@ -6,28 +6,52 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
                 title: ko.observable('Accounts'),
                 description: ko.observable('Accounts and general information')
             },
-            accounts: utils.toKoObject(model.accounts),
+            //accounts: utils.toKoObject(model.accounts),
             methods: {
                 isEven: () => {
                     return true;
                 },
                 afterload: init,
-                isBank: (account) => { return account.type() == 'bank'; },
-                isCash: (account) => { return account.type() == 'cash'; },
-                isVisa: (account) => { return account.type() == 'visa'; },
-                isMastercard: (account) => { return account.type() == 'mastercard'; },
-                isPaypal: (account) => { return account.type() == 'paypal'; },
-                isTypeUndefined: (account) => { return !account.type() || account.type().length == 0; },
+                isBank: (account) => { return account.type == 'bank'; },
+                isCash: (account) => { return account.type == 'cash'; },
+                isVisa: (account) => { return account.type == 'visa'; },
+                isMastercard: (account) => { return account.type == 'mastercard'; },
+                isPaypal: (account) => { return account.type == 'paypal'; },
+                isTypeUndefined: (account) => { return !account.type || account.type.length == 0; },
                 newAccount: () => {
-                    viewModel.accounts.push(utils.toKoObject(new Account()));
-                    model.accounts = utils.toPlainObject(viewModel.accounts());
+                    model.accounts.push(utils.toKoObject(new Account()));
+                    //model.accounts = utils.toPlainObject(viewModel.accounts());
                 },
                 save: () => {
                     saveLoadService.save(model);
                 },
-            }
+            },
+            accounts: mockService.generateRandomAccounts(4),//model.accounts,
+            //[{
+            //    id: 1,
+            //    name: "Article One",
+            //    content: "Content for article one."
+            //},
+            //{
+            //    id: 2,
+            //    name: "Article Two",
+            //    content: "Content for article two."
+            //},
+            //{
+            //    id: 3,
+            //    name: "Article Three",
+            //    content: "Content for article three."
+            //}
+            //],
+            selectedView: ko.observable("details"),
+            selectedAccount: ko.observable()
         };
 
+        for (var i = 0; i < viewModel.accounts.length; i++) {
+            viewModel.accounts[i].templateToUse = function (item) {
+                return item === viewModel.selectedAccount() ? 'edit' : viewModel.selectedView();
+            }.bind(viewModel.accounts[i]);
+        }
 
         return viewModel;
 
