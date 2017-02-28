@@ -13,29 +13,51 @@
     <section class="section-padding-page">
         <div class="row" data-bind="foreach:accounts">
             <div class="col-md-3 div-account div-border">
-                <a class="clear" href="javascript:void(0)">
-                    <div>
-                        <div class="pull-left">
-                            <i class="fa text-white menu-icon"
-                               data-bind="css : {
-                                   'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
-                                   'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
-                                   'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
-                                   'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
-                                   'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
-                                   'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>
-                            <div class="easypiechart easyPieChart pull-left" data-bind="attr: { 'data-percent': percent}" data-line-width="12" data-loop="false" data-animate="1200" data-scale-color="transparent" data-size="96">
-                            </div>
-                        </div>
-                        <p>
-                            <strong data-bind="text:sum"></strong>
-                        </p>
-                        <p class="text-muted text-white" data-bind="text:name"></p>
-                        <p class="text-white" data-bind="text:plannedValue"></p>
-                    </div>
-                </a>
+                <div data-bind="template: { name: templateToUse}"></div>
             </div>
         </div>
+
     </section>
+
+    <script id="details" type="text/html">
+        <div>
+            <a class="clear" href="javascript:void(0)">
+                <div>
+                    <div class="pull-left">
+                        <i class="fa text-white menu-icon"
+                           data-bind="css : {
+                           'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
+                           'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
+                           'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
+                           'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
+                           'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
+                           'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>
+                        <div class="easypiechart easyPieChart pull-left" data-bind="attr: { 'data-percent': percent}" data-line-width="12" data-loop="false" data-animate="1200" data-scale-color="transparent" data-size="96">
+                        </div>
+                    </div>
+                    <p>
+                        <strong data-bind="text:sum"></strong>
+                    </p>
+                    <p class="text-muted text-white" data-bind="text:name"></p>
+                    <p class="text-white" data-bind="text:plannedValue"></p>
+                </div>
+            </a>
+
+            <button data-bind="click: $parent.selectedAccount">Edit</button>
+        </div>
+    </script>
+
+    <script id="edit" type="text/html">
+        <div>
+            <input data-bind="value: id" /><br />
+            <input data-bind="value: name" />
+        </div>
+    </script>
+
+
+
+
+
+
 </div>
 
