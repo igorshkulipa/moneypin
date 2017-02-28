@@ -1,6 +1,8 @@
 define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services/mockService', 'model/model', 'helpers/utils', 'types/account', 'services/saveLoadService'],
     (ko, $, $chart, dataStorage, mockService, model, utils, Account, saveLoadService) => {
 
+        var _model = {};
+        _model.accounts = ko.observableArray(model.accounts);
         var viewModel = {
             strings: {
                 title: ko.observable('Accounts'),
@@ -19,30 +21,18 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
                 isPaypal: (account) => { return account.type == 'paypal'; },
                 isTypeUndefined: (account) => { return !account.type || account.type.length == 0; },
                 newAccount: () => {
-                    model.accounts.push( new Account());
-                    //model.accounts = utils.toPlainObject(viewModel.accounts());
+                    var account = new Account();
+                    account.templateToUse = function (item) {
+                        return item === viewModel.selectedAccount() ? 'edit' : viewModel.selectedView();
+                    }.bind(account);
+                    _model.accounts.push(account);
+                    _model.accounts.valueHasMutated();
                 },
                 save: () => {
                     saveLoadService.save(model);
                 },
             },
-            accounts: mockService.generateRandomAccounts(4),//model.accounts,
-            //[{
-            //    id: 1,
-            //    name: "Article One",
-            //    content: "Content for article one."
-            //},
-            //{
-            //    id: 2,
-            //    name: "Article Two",
-            //    content: "Content for article two."
-            //},
-            //{
-            //    id: 3,
-            //    name: "Article Three",
-            //    content: "Content for article three."
-            //}
-            //],
+            accounts: _model.accounts,
             selectedView: ko.observable("details"),
             selectedAccount: ko.observable()
         };
@@ -52,6 +42,10 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
                 return item === viewModel.selectedAccount() ? 'edit' : viewModel.selectedView();
             }.bind(viewModel.accounts[i]);
         }
+
+        viewModel.templateToUse = function (item) {
+            return item === viewModel.selectedAccount() ? 'edit' : viewModel.selectedView();
+        }.bind(viewModel);
 
         return viewModel;
 
