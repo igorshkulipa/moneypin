@@ -63,7 +63,8 @@
                 html: 'content/accounts/accounts.html',
                 js: 'content/accounts/accounts',
                 path: 'tab-accounts',
-                position: 'content-accounts'
+                position: 'content-accounts',
+                default: true
             },
             analysis: {
                 name: 'analysis',
@@ -121,15 +122,15 @@
                 path: 'tab-help',
                 position: 'content-help'
             },
-            main: {
-                name: 'main',
-                menuText: 'Main',
-                html: 'content/main/main.html',
-                js: 'content/main/main',
-                default: true,
-                path: 'tab-main',
-                position: 'content-main'
-            },
+            //main: {
+            //    name: 'main',
+            //    menuText: 'Main',
+            //    html: 'content/main/main.html',
+            //    js: 'content/main/main',
+            //    default: true,
+            //    path: 'tab-main',
+            //    position: 'content-main'
+            //},
             settings: {
                 name: 'settings',
                 menuText: 'Settings',
@@ -137,6 +138,10 @@
                 js: 'content/settings/settings',
                 path: 'tab-settings',
                 position: 'content-settings'
+            },
+            samePlace: {
+                name: 'samePlace',
+                path: 'same-place'
             }
 
         }

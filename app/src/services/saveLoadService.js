@@ -1,4 +1,4 @@
-﻿define(['lodash', 'config/config'], (_, config) => {
+﻿define(['lodash', 'config/config', 'services/mockService'], (_, config, mockService) => {
     return {
         save: save,
         load: load,

@@ -1,8 +1,11 @@
 ﻿define(['knockout', 'modals/action/action'], (ko, action) => {
     return {
-        title: ko.observable('Action'),
+        actionMenuItemText: ko.observable('Action'),
+        transferMenuItemText: ko.observable('Transfer'),
         actionClick: () => {
             action.show();
-        }
-    };
+        },
+        transferClick: () => {
+            action.show();
+}    };
 });

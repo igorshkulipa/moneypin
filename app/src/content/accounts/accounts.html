@@ -1,46 +1,86 @@
 ﻿
-<section class="panel-default  no-border no-radius">
-    <div>
-        <button type="button" class="btn btn-sm btn-primary" data-bind="click: methods.newAccount">
-            <span data-bind="text:strings.newAccountLabel"></span>
-        </button>
-        <button type="button" class="btn btn-sm btn-primary" data-bind="click: methods.saveAccount">
-            <span data-bind="text:strings.saveAccountLabel"></span>
-        </button>
-    </div>
+<div>
+    <header class="page-01-header">
+        <a class="header-ref" href="#/tab-accounts">
+            <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
+        </a>
+    </header>
     <!--Accounts-->
-    <div class="row bg-empty">
-        <div class="m-l-none m-r-none lter no-border no-radius" data-bind="foreach:accounts">
-            <div class="col-sm-6 col-md-3  no-border no-radius panel-body">
-                <section class="panel panel-info">
-                    <div class="inline">
-                        <div class="easypiechart easyPieChart" data-bind="attr: { 'data-percent': percent}" data-line-width="10" data-loop="false" data-animate="2000" data-scale-color="#FEFEFE" data-size="100">
-                            <span class="fa-stack fa-2x m-r-s m-t-s">
-                                <i data-bind="attr:{class:roundIcon.textcss}">
-                                </i>
-                                <i class="fa fa-stack-1x text-white"
-                                   data-bind="css : {
-                                   'fa-money' : $parent.methods.isCash($data),
-                                   'fa-bank' : $parent.methods.isBank($data),
-                                   'fa-cc-visa' : $parent.methods.isVisa($data),
-                                   'fa-cc-mastercard' : $parent.methods.isMastercard($data),
-                                   'fa-paypal' : $parent.methods.isPaypal($data),
-                                   'fa-question' : $parent.methods.isTypeUndefined($data)  }"></i>
-                            </span>
+    <section class="section-padding-page" data-bind="click: resetSelectedAccount, clickBubble: false">
+        <div class="container full-width">
+            <div class="row" data-bind="template: { name: templateToUse, foreach:accounts}"></div>
+            <div data-bind="template: { name: 'newAccount'}"></div>
+        </div>
+    </section>
+
+    <script id="newAccount" type="text/html">
+        <div class="col-md-3 div-account div-border" data-bind="click: methods.newAccount, clickBubble: false">
+            <i class="fa text-white menu-icon fa-plus"></i>
+        </div>
+    </script>
+
+    <script id="viewAccount" type="text/html">
+        <div class="col-md-3 div-account div-border">
+            <div data-bind="click: $parent.selectedAccount, clickBubble: false">
+                <div class="clear" href="javascript:void(0)">
+                    <div>
+                        <div class="pull-left">
+                            <i class="fa text-white menu-icon"
+                               data-bind="css : {
+                           'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
+                           'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
+                           'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
+                           'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
+                           'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
+                           'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>
+                            <div class="pull-left" data-bind="template: { name: 'percentageChart'}">
+                            </div>
                         </div>
+                        <p>
+                            <strong data-bind="text:sum"></strong>
+                        </p>
+                        <p class="text-muted text-white" data-bind="text:name"></p>
+                        <p class="text-white" data-bind="text:plannedValue"></p>
                     </div>
-                    <div class="inline p-l pos-abs p-r-xl wrd-brk list-4-items">
-                        <a class="clear" href="javascript:void(0)">
-                            <span class="h3 block m-t-xs">
-                                <input type="text" data-bind="value:sum">
-                            </span>
-                        </a>
-                    </div>
-                </section>
+                </div>
             </div>
         </div>
+    </script>
+
+    <script id="editAccount" type="text/html">
+        <div class="col-md-3 div-account div-border">
+            <div data-bind="click: $parent.selectedAccount, clickBubble: false">
+                <div class="clear" href="javascript:void(0)">
+                    <div>
+                        <div class="pull-left">
+                            <i class="fa text-white menu-icon"
+                               data-bind="css : {
+                           'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
+                           'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
+                           'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
+                           'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
+                           'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
+                           'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>
+                            <div class="pull-left" data-bind="template: { name: 'percentageChart'}">
+                            </div>
+                        </div>
+                        <p>
+                            <strong data-bind="text:sum"></strong>
+                        </p>
+                        <input data-bind="value:name, click: $parent.inputClick" />
+                        <input type="number" data-bind="value:plannedValue, click: $parent.inputClick" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>
+
+<script id="percentageChart" type="text/html">
+    <div class="c100 p55 small dark center orange">
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
     </div>
-    <!--End Accounts-->
-
-
-</section>
+</script>

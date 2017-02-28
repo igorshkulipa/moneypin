@@ -2,82 +2,52 @@
 <div data-bind="page: {id: 'transactions'}">
 
     <header class="page-header">
-        <a class="header-ref" href="#/transactions">
+        <a class="header-ref" href="#/tab-transactions">
             <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
         </a>
     </header>
     <!--Transactions-->
-    <section class="section-padding-page">
-        <div class="row" data-bind="foreach:transactions">
-            <div class="col-md-3 div-account div-border">
-                <a class="clear" href="javascript:void(0)">
-                    <div>
-                        <div class="pull-left">
-                            <!--<i class="fa text-white menu-icon"
-                               data-bind="css : {
-                                   'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
-                                   'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
-                                   'fa-cc-visa fa-cc-visa-inside-chart' : $parent.methods.isVisa($data),
-                                   'fa-cc-mastercard fa-cc-mastercard-inside-chart' : $parent.methods.isMastercard($data),
-                                   'fa-cc-paypal fa-cc-paypal-inside-chart' : $parent.methods.isPaypal($data),
-                                   'fa-question fa-question-inside-chart' : $parent.methods.isTypeUndefined($data)  }"></i>-->
-                        </div>
-                        <p>
-                            <strong data-bind="text:amount"></strong>
-                        </p>
-                        <p class="text-muted text-white" data-bind="text:id"></p>
-                        <p class="text-white" data-bind="text:localeDate"></p>
-                    </div>
-                </a>
-            </div>
+    <section class="section-padding-page" data-bind="click: resetSelectedTransaction, clickBubble: false">
+        <div class="container full-width">
+            <div class="row" data-bind="template: { name: templateToUse, foreach:transactions}"></div>
         </div>
     </section>
 
-    <!--<div class="row">
-        <div class="m-l-none m-r-none bg-light lter no-border no-radius" data-bind="foreach:transactions">
-            <div class="col-sm-6 col-md-3  no-border no-radius panel-body lt">
-
-                <section class="panel panel-default">
-                    <header data-bind="attr:{class:headerColor.bgcss}">
-                        <div class="clearfix">
-                            <a href="javascript:void(0)" class="pull-left avatar">
-                                <span class="fa-stack fa-2x m-r-s m-t-s">
-                                    <i class="fa fa-circle fa-stack-2x text-white"></i>
-                                    <i class="fa fa-stack-1x text-dark"
-                                       data-bind="css : {
-                                        'fa-money' : true}"></i>
-                                </span>
-                            </a>
-                            <div class="clear">
-                                <div class="h3 m-t-xs m-b-xs">
-                                    <header class="panel-heading font-bold  text-white">
-                                        <span data-bind="text:amount"></span>
-                                        <span data-bind="text:currency"></span>
-                                    </header>
-                                    <i class="fa text-white pull-right text-xs m-t-sm"
-                                       data-bind="css : {
-                                        'fa-plus-circle' : $data.operation()==true,
-                                        'fa-minus-circle' : $data.operation()==false}"></i>
-                                </div>
-                                <header class="h5 text-dark p-l" data-bind="text:category"></header>
-                            </div>
-                        </div>
-                    </header>
-                    <div class="list-group no-radius alt">
-                        <span class="list-group-item">
-                            <span class="badge bg-success">&nbsp;</span>
-                            <i class="fa fa-calendar icon-muted"></i>
-                            <small class="text-dark" data-bind="text:localeDate"></small>
-                        </span>
-                        <span class="list-group-item">
-                            <span class="badge bg-info">&nbsp;</span>
-                            <i class="fa fa-list icon-muted"></i>
-                            <small class="text-dark" data-bind="text:account"></small>
-                        </span>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>-->
     <!--End Transactions-->
 </div>
+
+<script id="viewTransaction" type="text/html">
+    <div class="col-md-3 div-account div-border">
+        <div data-bind="click: $parent.selectedTransaction, clickBubble: false">
+            <a class="clear" href="javascript:void(0)">
+                <div>
+                    <div class="pull-left">
+                    </div>
+                    <p>
+                        <strong data-bind="text:amount"></strong>
+                    </p>
+                    <p class="text-muted text-white" data-bind="text:id"></p>
+                    <p class="text-white" data-bind="text:localeDate"></p>
+                </div>
+            </a>
+        </div>
+    </div>
+</script>
+
+<script id="editTransaction" type="text/html">
+    <div class="col-md-3 div-account div-border">
+        <div data-bind="click: $parent.selectedTransaction, clickBubble: false">
+            <a class="clear" href="javascript:void(0)">
+                <div>
+                    <div class="pull-left">
+                    </div>
+                    <p>
+                        <strong data-bind="text:amount"></strong>
+                    </p>
+                    <input class="text-muted text-white" data-bind="value:amount" />
+                    <input class="text-white" data-bind="value:localeDate" />
+                </div>
+            </a>
+        </div>
+    </div>
+</script>

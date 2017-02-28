@@ -31,12 +31,8 @@ require(['knockout', 'jquery', 'bootstrap', 'layout', 'loader/loader', 'router/r
                     });
                 }
             }, (request) => {
-                router.redirect('tab-main');
+                router.redirect('tab-accounts');
             });
-    }
-
-    function actionHandler() {
-        alert('action');
     }
 });
 
