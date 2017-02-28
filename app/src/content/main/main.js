@@ -20,7 +20,7 @@ define(['knockout', 'jquery', 'jqeasypiechart', 'storage/dataStorage', 'services
                 isTypeUndefined: (account) => { return !account.type() || account.type().length == 0; },
                 newAccount: () => {
                     viewModel.accounts.push(utils.toKoObject(new Account()));
-                    model.accounts = utils.toPlainObject(viewModel.accounts());
+                    model.accounts = ko.toJS(viewModel.accounts);
                 },
                 save: () => {
                     saveLoadService.save(model);

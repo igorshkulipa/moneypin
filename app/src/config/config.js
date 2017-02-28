@@ -105,13 +105,13 @@
                 path: 'tab-debts',
                 position: 'content-debts'
             },
-            expenses: {
-                name: 'expenses',
-                menuText: 'Income and Expenses',
-                html: 'content/expenses/expenses.html',
-                js: 'content/expenses/expenses',
-                path: 'tab-expenses',
-                position: 'content-expenses'
+            transactions: {
+                name: 'transactions',
+                menuText: 'All Transactions',
+                html: 'content/transactions/transactions.html',
+                js: 'content/transactions/transactions',
+                path: 'tab-transactions',
+                position: 'content-transactions'
             },
             help: {
                 name: 'help',
