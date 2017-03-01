@@ -4,7 +4,7 @@ section {
     width: 100%;
 }
 
-ul {
+ul.ul-menu {
     position: fixed;
     z-index: 1;
 }
@@ -15,7 +15,11 @@ ul {
     display: block;
 }
 
-ul .icon:hover {
+.cursor-pointer {
+    cursor: pointer;
+}
+
+ul.ul-menu .icon:hover {
     opacity: 0.6;
 }
 
@@ -23,7 +27,7 @@ ul .icon:hover {
     margin-bottom: 20px;
 }
 
-ul {
+ul.ul-menu {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -38,11 +42,16 @@ ul {
     text-align: center;
 }
 
-ul li {
+ul li.li-menu {
     margin: 30px 0;
 }
 
 a {
+    text-decoration: none;
+    font-family: open sans, sans-serif;
+}
+
+a:hover {
     text-decoration: none;
     font-family: open sans, sans-serif;
 }

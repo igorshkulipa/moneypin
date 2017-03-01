@@ -1,4 +1,4 @@
-﻿define(['types/accountType', 'helpers/guid'], (AccountType, guid) => {
+﻿define(['types/accountType', 'helpers/guid', 'types/currency'], (AccountType, guid, Currency) => {
     return (id, type, name, plannedValue, sum, color, edit) => {
         var accType = AccountType(type);
         var object = {
@@ -7,7 +7,8 @@
             name: name || '',
             sum: sum || 0,
             plannedValue: plannedValue || 0,
-            isEditing: edit === false || true
+            isEditing: edit === false || true,
+            currency: new Currency()
         };
 
         Object.defineProperty(object, 'percent', {

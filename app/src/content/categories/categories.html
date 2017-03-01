@@ -1,0 +1,36 @@
+﻿<div>
+    <header class="page-header">
+        <a class="header-ref" href="#/tab-categories">
+            <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
+        </a>
+    </header>
+    <!--Accounts-->
+    <section class="section-padding-page" data-bind="click: resetSelectedCategory, clickBubble: false">
+        <div class="container full-width">
+            <div class="row">
+                <ul>
+                    <li data-bind="template: { name: templateToUse, foreach:categories}"></li>
+                    <li data-bind="template: { name: 'newCategory'}"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script id="newCategory" type="text/html">
+    <div class="div-category div-border" data-bind="click: methods.newCategory, clickBubble: false">
+        <i class="fa text-white menu-icon fa-plus"></i>
+    </div>
+</script>
+
+<script id="viewCategory" type="text/html">
+    <div class="div-category div-border" data-bind="click: $parent.selectedCategory, clickBubble: false">
+        <span data-bind="text:name"></span>
+    </div>
+</script>
+
+<script id="editCategory" type="text/html">
+    <div class="div-category div-border" data-bind="click: $parent.selectedCategory, clickBubble: false">
+        <span data-bind="text:name"></span>
+    </div>
+</script>

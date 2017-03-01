@@ -90,13 +90,13 @@
                 path: 'tab-calendar',
                 position: 'content-calendar'
             },
-            category: {
-                name: 'category',
-                menuText: 'Category',
-                html: 'content/category/category.html',
-                js: 'content/category/category',
-                path: 'tab-category',
-                position: 'content-category'
+            categories: {
+                name: 'categories',
+                menuText: 'Categories',
+                html: 'content/categories/categories.html',
+                js: 'content/categories/categories',
+                path: 'tab-categories',
+                position: 'content-categories'
             },
             debts: {
                 name: 'debts',

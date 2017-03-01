@@ -1,15 +1,58 @@
 ﻿<section>
-    <ul>
-        <a href="#same-place"><li id="menu-item-01" class="menu-icon fa fa-plus" data-bind="click : actionClick"><p class="hint" data-bind="text:actionMenuItemText"></p></li></a>
-        <a href="#same-place"><li id="menu-item-02" class="menu-icon fa fa-exchange" data-bind="click : transferClick"><p class="hint" data-bind="text:transferMenuItemText"></p></li></a>
-        <a href="#tab-accounts"><li id="menu-item-03" class="menu-icon fa fa-credit-card"><p class="hint">Accounts</p></li></a>
-        <a href="#tab-transactions"><li id="menu-item-04" class="menu-icon fa fa-history"><p class="hint">Transactions</p></li></a>
-        <a href="#tab-budget"><li id="menu-item-05" class="menu-icon fa fa-edit"><p class="hint">Budget</p></li></a>
-        <!--<a href="#tab-debts"><li id="menu-item-06" class="menu-icon fa fa-dribbble"><p class="hint">Debts</p></li></a>
-        <a href="#tab-calendar"><li id="menu-item-07" class="menu-icon fa fa-calendar"><p class="hint">Calendar</p></li></a>-->
-        <a href="#tab-analysis"><li id="menu-item-08" class="menu-icon fa fa-bar-chart-o"><p class="hint">Analysis</p></li></a>
-        <a href="#tab-category"><li id="menu-item-09" class="menu-icon fa fa-list"><p class="hint">Categories</p></li></a>
-        <a href="#tab-settings"><li id="menu-item-10" class="menu-icon fa fa-gear"><p class="hint">Settings</p></li></a>
-        <a href="#tab-help"><li id="menu-item-11" class="menu-icon fa fa-question"><p class="hint">Help</p></li></a>
+    <ul class="ul-menu">
+        <li id="menu-item-01" class="li-menu menu-icon">
+            <a href="javascript:void(0)" data-bind="click : actionClick">
+                <i class="menu-icon fa fa-plus cursor-pointer"></i>
+                <p class="text-small text-white" data-bind="text:actionMenuItemText"></p>
+            </a>
+        </li>
+        <li id="menu-item-02" class="li-menu menu-icon" data-bind="click : transferClick">
+            <a href="javascript:void(0)">
+                <i class="menu-icon fa fa-exchange cursor-pointer"></i>
+                <p class="text-small text-white" data-bind="text:transferMenuItemText"></p>
+            </a>
+        </li>
+        <li id="menu-item-03" class="li-menu menu-icon">
+            <a href="#tab-accounts">
+                <i class="menu-icon fa fa-credit-card cursor-pointer"></i>
+                <p class="text-small text-white">Accounts</p>
+            </a>
+        </li>
+        <li id="menu-item-04" class="li-menu menu-icon">
+            <a href="#tab-transactions">
+                <i class="menu-icon fa fa-history cursor-pointer"></i>
+                <p class="text-small text-white">Transactions</p>
+            </a>
+        </li>
+        <li id="menu-item-05" class="li-menu menu-icon">
+            <a href="#tab-budget">
+                <i class="menu-icon fa fa-edit cursor-pointer"></i>
+                <p class="text-small text-white">Budget</p>
+            </a>
+        </li>
+        <li id="menu-item-08" class="li-menu menu-icon">
+            <a href="#tab-analysis">
+                <i class="menu-icon fa fa-bar-chart-o cursor-pointer"></i>
+                <p class="text-small text-white">Analysis</p>
+            </a>
+        </li>
+        <li id="menu-item-09" class="li-menu menu-icon">
+            <a href="#tab-categories">
+                <i class="menu-icon fa fa-list cursor-pointer"></i>
+                <p class="text-small text-white">Categories</p>
+            </a>
+        </li>
+        <li id="menu-item-10" class="li-menu menu-icon">
+            <a href="#tab-settings">
+                <i class="menu-icon fa fa-gear cursor-pointer"></i>
+                <p class="text-small text-white">Settings</p>
+            </a>
+        </li>
+        <li id="menu-item-11" class="li-menu menu-icon">
+            <a href="#tab-help">
+                <i class="menu-icon fa fa-question cursor-pointer"></i>
+                <p class="text-small text-white">Help</p>
+            </a>
+        </li>
     </ul>
 </section>

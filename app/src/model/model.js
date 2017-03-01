@@ -2,7 +2,12 @@
     var model = {
         accounts: [],
         transactions: [],
-        categories: []
+        categories: {
+            expense: {},
+            income: {},
+            budget: {}
+        },
+        currencies: []
     };
     return model;
 });

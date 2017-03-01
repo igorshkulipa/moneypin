@@ -17,6 +17,7 @@
             model.accounts = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.accounts'));
             model.transactions = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.transactions'));
             model.categories = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.categories'));
+            model.currencies = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.currencies'));
         } else {
             model = {
                 accounts: [],
@@ -31,5 +32,6 @@
         window.localStorage.removeItem(config.config.localStoragePrefix + '.accounts');
         window.localStorage.removeItem(config.config.localStoragePrefix + '.transactions');
         window.localStorage.removeItem(config.config.localStoragePrefix + '.categories');
+        window.localStorage.removeItem(config.config.localStoragePrefix + '.currencies');
     }
 });

@@ -2,8 +2,8 @@
     return (id, name, sign) => {
         var object = {
             id: id || guid(),
-            name: name || '',
-            sign: sign || ''
+            name: name || 'US Dollar',
+            sign: sign || 'usd'
         };
         return object;
     }

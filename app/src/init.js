@@ -56,7 +56,6 @@ require.config({
         hasher: 'lib/hasher/hasher',
         jqeasypiechart: 'lib/jquery/jquery.easy-pie-chart',
         jqsparkline: 'lib/jquery/jquery.sparkline.min',
-        jqui: 'lib/jquery/jquery-ui',
-        remodal: 'lib/remodal/remodal'
+        jqui: 'lib/jquery/jquery-ui'
     }
 });
