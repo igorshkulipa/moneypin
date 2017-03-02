@@ -17,6 +17,9 @@
             model.accounts = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.accounts'));
             model.transactions = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.transactions'));
             model.categories = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.categories'));
+            //model.categories.expense = mockService.generateRandomCategories(10);
+            //model.categories.income = mockService.generateRandomCategories(15);
+            //model.categories.budget = mockService.generateRandomCategories(10);
             model.currencies = JSON.parse(window.localStorage.getItem(config.config.localStoragePrefix + '.currencies'));
         } else {
             model = {

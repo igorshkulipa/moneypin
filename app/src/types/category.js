@@ -1,10 +1,10 @@
-﻿define(['lodash'], (_) => {
+﻿define(['lodash', 'helpers/guid'], (_, guid) => {
     return (id, name, parentId) => {
         var object = {
-            id: id,
-            name: name,
-            parent: parentId,
-            children: null
+            id: id || guid(),
+            name: name || '',
+            parent: parentId || null,
+            subcategories: []
         };
         return object;
     }

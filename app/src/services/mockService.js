@@ -1,7 +1,8 @@
-﻿define(['lodash', 'types/account', 'types/transaction', 'helpers/guid', 'helpers/utils'], (_, Account, Transaction, guid, utils) => {
+﻿define(['lodash', 'types/account', 'types/transaction', 'types/category', 'helpers/guid', 'helpers/utils'], (_, Account, Transaction, Category, guid, utils) => {
     return {
         generateRandomAccounts: generateRandomAccounts,
-        generateRandomTransactions: generateRandomTransactions
+        generateRandomTransactions: generateRandomTransactions,
+        generateRandomCategories: generateRandomCategories
     };
 
     function generateRandomAccounts(count) {
@@ -38,6 +39,18 @@
         result = result.sort((a, b) => {
             return a.date > b.date;
         });
+        return result;
+    }
+
+    function generateRandomCategories(count) {
+        var result = [];
+
+        for (var i = 0; i < count; i++) {
+            var id = guid();
+            var name = 'Category Name ' + Math.round(Math.random() * 100).toString() + ((Math.round(Math.random() * 100) > 50) ? ' Category Additional Name' : '');
+            var element = new Category(id, name, null);
+            result.push(element);
+        };
         return result;
     }
 });

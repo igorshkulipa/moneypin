@@ -29,16 +29,11 @@ module.exports = function (grunt) {
         'lib/lodash/lodash.js',
         'lib/modernizr/modernizr-custom.js',
         'lib/knockout/knockout-3.4.0.js',
-        'lib/jquery/jquery-2.2.4.js',
-        'lib/pager/pager.js',
+        'lib/jquery/jquery.min.js',
         'lib/crossroads/crossroads.js',
         'lib/signals/signals.js',
         'lib/hasher/hasher.js',
-        'lib/remodal/remodal.js',
-        'lib/jquery/jquery.easy-pie-chart.js',
-        'lib/jquery/jquery.sparkline.min.js',
-        'lib/jquery/jquery-ui.js',
-        'lib/jquery/jquery.min.js',
+        'lib/bootstrap/bootstrap.min.js',
         'lib/tether/js/tether.min.js'
     ];
 
@@ -58,21 +53,6 @@ module.exports = function (grunt) {
     ];
 
     var pathToLayout = [
-        'app/styles/js/app.v2.js',
-        'app/styles/js/charts/easypiechart/jquery.easy-pie-chart.js',
-        'app/styles/js/charts/sparkline/jquery.sparkline.min.js',
-        'app/styles/js/calendar/bootstrap_calendar.js',
-        'app/styles/js/calendar/demo.js',
-        'app/styles/js/sortable/jquery.sortable.js',
-        'app/styles/js/charts/sparkline/jquery.sparkline.min.js',
-        'app/styles/js/charts/easypiechart/jquery.easy-pie-chart.js',
-        'app/styles/js/charts/flot/jquery.flot.min.js',
-        'app/styles/js/charts/flot/jquery.flot.tooltip.min.js',
-        'app/styles/js/charts/flot/jquery.flot.resize.js',
-        'app/styles/js/charts/flot/jquery.flot.orderBars.js',
-        'app/styles/js/charts/flot/jquery.flot.pie.min.js',
-        'app/styles/js/charts/flot/jquery.flot.grow.js',
-        'app/styles/js/charts/flot/demo.js'
     ];
 
     grunt.initConfig({

@@ -1,4 +1,4 @@
-require(['knockout', 'jquery', 'bootstrap', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, bootstrap, layout, loader, router, config) => {
+require(['knockout', 'jquery', 'layout', 'loader/loader', 'router/router', 'config/config'], (ko, $, layout, loader, router, config) => {
 
     var $rootVM = {
     };
@@ -47,15 +47,10 @@ require.config({
         // Libs
         knockout: 'lib/knockout/knockout-3.4.0',
         lodash: 'lib/lodash/lodash',
-        jquery: 'lib/jquery/jquery-2.2.4',
-        bootstrap: 'styles/js/bootstrap/bootstrap.min',
-        layout: 'lib/layout/app.v2',
-        pager: 'lib/pager/pager',
+        jquery: 'lib/jquery/jquery.min',
+        bootstrap: 'lib/bootstrap/bootstrap.min',
         crossroads: 'lib/crossroads/crossroads',
         signals: 'lib/signals/signals',
         hasher: 'lib/hasher/hasher',
-        jqeasypiechart: 'lib/jquery/jquery.easy-pie-chart',
-        jqsparkline: 'lib/jquery/jquery.sparkline.min',
-        jqui: 'lib/jquery/jquery-ui'
     }
 });

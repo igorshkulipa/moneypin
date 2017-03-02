@@ -49,12 +49,12 @@
             localStoragePrefix: 'z8q8f9Dm'
         },
         modals: {
-            action: {
-                position: 'modal-action',
-                name: 'action',
-                html: 'modals/action/action.html',
-                js: 'modals/action/action'
-            },
+            //action: {
+            //    position: 'modal-action',
+            //    name: 'action',
+            //    html: 'modals/action/action.html',
+            //    js: 'modals/action/action'
+            //},
         },
         content: {
             accounts: {
@@ -138,12 +138,7 @@
                 js: 'content/settings/settings',
                 path: 'tab-settings',
                 position: 'content-settings'
-            },
-            samePlace: {
-                name: 'samePlace',
-                path: 'same-place'
             }
-
         }
     };
 });

@@ -4,33 +4,152 @@
             <h2><i class="fa fa-angle-double-right menu-icon pull-left"></i><span data-bind="text:strings.title"></span></h2>
         </a>
     </header>
-    <!--Accounts-->
     <section class="section-padding-page" data-bind="click: resetSelectedCategory, clickBubble: false">
         <div class="container full-width">
             <div class="row">
-                <ul>
-                    <li data-bind="template: { name: templateToUse, foreach:categories}"></li>
-                    <li data-bind="template: { name: 'newCategory'}"></li>
-                </ul>
+                <!--Expense Categories-->
+                <div class="col-md-4">
+                    <div class="css3-treeview">
+                        <ul data-bind="foreach: expenseCategories">
+                            <li data-bind="template: { name: $root.expenseTemplateToUse}"></li>
+                            <li>
+                                <ul data-bind="foreach: $data.subcategories">
+                                    <li data-bind="template: { name: $root.expenseTemplateToUse}"></li>
+                                </ul>
+                                <ul>
+                                    <li data-bind="template: { name: 'newExpenseCategory'}"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li data-bind="template: { name: 'newExpenseCategory'}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Income Categories-->
+                <div class="col-md-4">
+                    <div class="css3-treeview">
+                        <ul data-bind="template: { name: incomeTemplateToUse, foreach:incomeCategories}"></ul>
+                        <ul>
+                            <li data-bind="template: { name: 'newIncomeCategory'}"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--Budget Categories-->
+                <div class="col-md-4">
+                    <div class="css3-treeview">
+                        <ul data-bind="template: { name: budgetTemplateToUse, foreach:budgetCategories}"></ul>
+                        <ul>
+                            <li data-bind="template: { name: 'newBudgetCategory'}"></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Currencies-->
+                <div class="col-md-4">
+                    <div class="css3-treeview">
+                        <ul data-bind="template: { name: currencyTemplateToUse, foreach:currencies}"></ul>
+                        <ul>
+                            <li data-bind="template: { name: 'newCurrency'}"></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </div>
 
-<script id="newCategory" type="text/html">
-    <div class="div-category div-border" data-bind="click: methods.newCategory, clickBubble: false">
-        <i class="fa text-white menu-icon fa-plus"></i>
-    </div>
+<script id="newExpenseCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : 'newExpenseCategoryListItem' }}" /><label>
+        </label>
+        <label data-bind="click: $root.methods.newExpenseCategory, clickBubble: false, attr : { for : 'newExpenseCategoryListItem' }">+ New Expense Category</label>
+    </li>
 </script>
 
-<script id="viewCategory" type="text/html">
-    <div class="div-category div-border" data-bind="click: $parent.selectedCategory, clickBubble: false">
-        <span data-bind="text:name"></span>
-    </div>
+<script id="newIncomeCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : 'newIncomeCategoryListItem' }}" /><label>
+        </label>
+        <label data-bind="click: methods.newIncomeCategory, clickBubble: false, attr : { for : 'newIncomeCategoryListItem' }">+ New Income Category</label>
+    </li>
 </script>
 
-<script id="editCategory" type="text/html">
-    <div class="div-category div-border" data-bind="click: $parent.selectedCategory, clickBubble: false">
-        <span data-bind="text:name"></span>
-    </div>
+<script id="newBudgetCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : 'newBudgetCategoryListItem' }}" /><label>
+        </label>
+        <label data-bind="click: methods.newBudgetCategory, clickBubble: false, attr : { for : 'newBudgetCategoryListItem' }">+ New Budget Category</label>
+    </li>
+</script>
+
+<script id="newCurrency" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : 'newICurrencyListItem' }}" /><label>
+        </label>
+        <label data-bind="click: methods.newCurrency, clickBubble: false, attr : { for : 'newCurrencyListItem' }">+ New Currency</label>
+    </li>
+</script>
+
+<script id="viewExpenseCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : $data.id }}" checked="checked" />
+    <label>
+    </label>
+    <label data-bind="click: $root.selectedExpenseCategory, clickBubble: false, text: name, attr: { for : $data.id }"></label>
+</script>
+
+<script id="viewIncomeCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <label data-bind="click: $parent.selectedIncomeCategory, clickBubble: false, text:name, attr : { for : $data.id }"></label>
+    </li>
+</script>
+
+<script id="viewBudgetCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <label data-bind="click: $parent.selectedBudgetCategory, clickBubble: false, text:name, attr : { for : $data.id }"></label>
+    </li>
+</script>
+
+<script id="viewCurrency" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <label data-bind="click: $parent.selectedCurrency, clickBubble: false, text:name, attr : { for : $data.id }"></label>
+    </li>
+</script>
+
+<script id="editExpenseCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : $data.id }}" />
+    <label>
+    </label>
+    <input data-bind="click: $root.inputClick, clickBubble: false, value:name" />
+</script>
+
+<script id="editIncomeCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
+    </li>
+</script>
+
+<script id="editBudgetCategory" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
+    </li>
+</script>
+
+<script id="editCurrency" type="text/html">
+    <li>
+        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
+        </label>
+        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
+    </li>
 </script>

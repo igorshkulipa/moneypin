@@ -1,4 +1,4 @@
-﻿define(['knockout', 'modals/action/action'], (ko, action) => {
+﻿define(['knockout'], (ko) => {
     return {
         actionMenuItemText: ko.observable('Action'),
         transferMenuItemText: ko.observable('Transfer'),
