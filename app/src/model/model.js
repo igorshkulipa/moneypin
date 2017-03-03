@@ -3,9 +3,14 @@
         accounts: [],
         transactions: [],
         categories: {
-            expense: {},
-            income: {},
-            budget: {}
+            transactions: {
+                expense: [],
+                income: [],
+            },
+            budget: {
+                expense: [],
+                income: []
+            }
         },
         currencies: []
     };

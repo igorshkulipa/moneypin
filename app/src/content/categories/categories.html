@@ -8,13 +8,13 @@
         <div class="container full-width">
             <div class="row">
                 <!--Expense Categories-->
-                <div class="col-md-4">
+                <div class="col-lg-3">
                     <div class="css3-treeview">
                         <ul data-bind="foreach: expenseCategories">
-                            <li data-bind="template: { name: $root.expenseTemplateToUse}"></li>
+                            <li data-bind="template: { name: $root.templateToUse}"></li>
                             <li>
-                                <ul data-bind="foreach: $data.subcategories">
-                                    <li data-bind="template: { name: $root.expenseTemplateToUse}"></li>
+                                <ul data-bind="foreach: subcategoriesObservable">
+                                    <li data-bind="template: { name: $root.templateToUse}"></li>
                                 </ul>
                                 <ul>
                                     <li data-bind="template: { name: 'newExpenseCategory'}"></li>
@@ -27,31 +27,59 @@
                     </div>
                 </div>
                 <!--Income Categories-->
-                <div class="col-md-4">
+                <div class="col-lg-3">
                     <div class="css3-treeview">
-                        <ul data-bind="template: { name: incomeTemplateToUse, foreach:incomeCategories}"></ul>
+                        <ul data-bind="foreach: incomeCategories">
+                            <li data-bind="template: { name: $root.templateToUse}"></li>
+                            <li>
+                                <ul data-bind="foreach: subcategoriesObservable">
+                                    <li data-bind="template: { name: $root.templateToUse}"></li>
+                                </ul>
+                                <ul>
+                                    <li data-bind="template: { name: 'newIncomeCategory'}"></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <ul>
                             <li data-bind="template: { name: 'newIncomeCategory'}"></li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <!--Budget Categories-->
-                <div class="col-md-4">
+                <!--Budget Expense Categories-->
+                <div class="col-lg-3">
                     <div class="css3-treeview">
-                        <ul data-bind="template: { name: budgetTemplateToUse, foreach:budgetCategories}"></ul>
+                        <ul data-bind="foreach: budgetExpenseCategories">
+                            <li data-bind="template: { name: $root.templateToUse}"></li>
+                            <li>
+                                <ul data-bind="foreach: subcategoriesObservable">
+                                    <li data-bind="template: { name: $root.templateToUse}"></li>
+                                </ul>
+                                <ul>
+                                    <li data-bind="template: { name: 'newBudgetExpenseCategory'}"></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <ul>
-                            <li data-bind="template: { name: 'newBudgetCategory'}"></li>
+                            <li data-bind="template: { name: 'newBudgetExpenseCategory'}"></li>
                         </ul>
                     </div>
                 </div>
-                <!--Currencies-->
-                <div class="col-md-4">
+                <!--Budget Income Categories-->
+                <div class="col-lg-3">
                     <div class="css3-treeview">
-                        <ul data-bind="template: { name: currencyTemplateToUse, foreach:currencies}"></ul>
+                        <ul data-bind="foreach: budgetIncomeCategories">
+                            <li data-bind="template: { name: $root.templateToUse}"></li>
+                            <li>
+                                <ul data-bind="foreach: subcategoriesObservable">
+                                    <li data-bind="template: { name: $root.templateToUse}"></li>
+                                </ul>
+                                <ul>
+                                    <li data-bind="template: { name: 'newBudgetIncomeCategory'}"></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <ul>
-                            <li data-bind="template: { name: 'newCurrency'}"></li>
+                            <li data-bind="template: { name: 'newBudgetIncomeCategory'}"></li>
                         </ul>
                     </div>
                 </div>
@@ -60,96 +88,50 @@
     </section>
 </div>
 
-<script id="newExpenseCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : 'newExpenseCategoryListItem' }}" /><label>
-        </label>
-        <label data-bind="click: $root.methods.newExpenseCategory, clickBubble: false, attr : { for : 'newExpenseCategoryListItem' }">+ New Expense Category</label>
-    </li>
-</script>
+<!--Templates-->
 
-<script id="newIncomeCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : 'newIncomeCategoryListItem' }}" /><label>
-        </label>
-        <label data-bind="click: methods.newIncomeCategory, clickBubble: false, attr : { for : 'newIncomeCategoryListItem' }">+ New Income Category</label>
-    </li>
-</script>
 
-<script id="newBudgetCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : 'newBudgetCategoryListItem' }}" /><label>
-        </label>
-        <label data-bind="click: methods.newBudgetCategory, clickBubble: false, attr : { for : 'newBudgetCategoryListItem' }">+ New Budget Category</label>
-    </li>
-</script>
 
-<script id="newCurrency" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : 'newICurrencyListItem' }}" /><label>
-        </label>
-        <label data-bind="click: methods.newCurrency, clickBubble: false, attr : { for : 'newCurrencyListItem' }">+ New Currency</label>
-    </li>
-</script>
-
-<script id="viewExpenseCategory" type="text/html">
+<script id="viewCategory" type="text/html">
     <input type="checkbox" data-bind="{attr : { id : $data.id }}" checked="checked" />
     <label>
     </label>
-    <label data-bind="click: $root.selectedExpenseCategory, clickBubble: false, text: name, attr: { for : $data.id }"></label>
+    <label data-bind="click: $root.selectedCategory, clickBubble: false, text: name, attr: { for : $data.id }"></label>
 </script>
 
-<script id="viewIncomeCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <label data-bind="click: $parent.selectedIncomeCategory, clickBubble: false, text:name, attr : { for : $data.id }"></label>
-    </li>
-</script>
-
-<script id="viewBudgetCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <label data-bind="click: $parent.selectedBudgetCategory, clickBubble: false, text:name, attr : { for : $data.id }"></label>
-    </li>
-</script>
-
-<script id="viewCurrency" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <label data-bind="click: $parent.selectedCurrency, clickBubble: false, text:name, attr : { for : $data.id }"></label>
-    </li>
-</script>
-
-<script id="editExpenseCategory" type="text/html">
+<script id="editCategory" type="text/html">
     <input type="checkbox" data-bind="{attr : { id : $data.id }}" />
     <label>
     </label>
     <input data-bind="click: $root.inputClick, clickBubble: false, value:name" />
 </script>
 
-<script id="editIncomeCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
-    </li>
+
+
+<script id="newExpenseCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : 'newExpenseCategoryListItem' }}" />
+    <label>
+    </label>
+    <label data-bind="click: $root.methods.newExpenseCategory, clickBubble: false, attr : { for : 'newExpenseCategoryListItem' }">+ New</label>
 </script>
 
-<script id="editBudgetCategory" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
-    </li>
+<script id="newIncomeCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : 'newIncomeCategoryListItem' }}" />
+    <label>
+    </label>
+    <label data-bind="click: $root.methods.newIncomeCategory, clickBubble: false, attr : { for : 'newIncomeCategoryListItem' }">+ New</label>
 </script>
 
-<script id="editCurrency" type="text/html">
-    <li>
-        <input type="checkbox" data-bind="{attr : { id : $data.id }}" /><label>
-        </label>
-        <input data-bind="click: $parent.inputClick, clickBubble: false, value:name" />
-    </li>
+<script id="newBudgetExpenseCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : 'newBudgetExpenseCategoryListItem' }}" />
+    <label>
+    </label>
+    <label data-bind="click: $root.methods.newBudgetExpenseCategory, clickBubble: false, attr : { for : 'newBudgetExpenseCategoryListItem' }">+ New</label>
+</script>
+
+<script id="newBudgetIncomeCategory" type="text/html">
+    <input type="checkbox" data-bind="{attr : { id : 'newBudgetIncomeCategoryListItem' }}" />
+    <label>
+    </label>
+    <label data-bind="click: $root.methods.newBudgetIncomeCategory, clickBubble: false, attr : { for : 'newBudgetIncomeCategoryListItem' }">+ New</label>
 </script>

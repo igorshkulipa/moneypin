@@ -269,6 +269,7 @@ a.header-ref {
   color: white;
 }
 .section-padding-layout {
+  margin-top: 0px;
   padding-top: 5%;
   padding-right: 1%;
   padding-bottom: 1%;
@@ -276,6 +277,7 @@ a.header-ref {
 }
 section.section-content {
   width: 90%;
+  margin-top: 0px;
   padding-top: 5%;
   padding-right: 1%;
   padding-bottom: 1%;
@@ -284,9 +286,18 @@ section.section-content {
 .section-scrollable {
   overflow-y: auto;
 }
+.section-scrollable {
+  overflow-y: auto;
+}
 .section-padding-page {
   padding-left: 10px;
   margin-top: 32px;
+}
+.section-height-60 {
+  height: 60% !important;
+}
+.section-height-40 {
+  height: 40% !important;
 }
 .page-01-header {
   position: fixed;
