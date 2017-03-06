@@ -1,2 +1,2 @@
-# sencoiney
+# moeypin
 Personal Finance Application
