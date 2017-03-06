@@ -1,2 +1,2 @@
-# moeypin
+# moneypin
 Personal Finance Application
