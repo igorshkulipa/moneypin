@@ -18,12 +18,12 @@ section,
 .page-01-layout {
   left: 0;
   margin-left: 10%;
-  z-index: 100;
+  z-index: 1;
 }
 .page-position-layout {
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 .page {
   position: absolute;
@@ -36,55 +36,55 @@ section,
   background-color: transparent;
   left: 0;
   margin-left: 10%;
-  z-index: 100;
+  z-index: 1;
 }
 #page-02 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-03 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-04 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-05 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-06 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-07 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-08 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #page-09 {
   background-color: #374046;
   left: 100%;
   position: absolute;
-  z-index: 999;
+  z-index: 2;
 }
 #tab-accounts:target .page#page-01 {
   transform: translateX(0);
@@ -307,7 +307,7 @@ section.section-content {
   height: calc(@padding-page-top + 2px);
   width: 100%;
   background-color: transparent;
-  z-index: 99;
+  z-index: 1;
   padding: 0px 0px 0px 0px;
 }
 .page-header {
@@ -318,7 +318,7 @@ section.section-content {
   height: calc(@padding-page-top + 2px);
   width: 100%;
   background-color: transparent;
-  z-index: 99;
+  z-index: 1;
   padding: 0px 0px 0px 0px;
 }
 .full-width {
@@ -345,7 +345,7 @@ section.section-content {
   /* Hidden by default */
   position: fixed;
   /* Stay in place */
-  z-index: 999;
+  z-index: 9999;
   /* Sit on top */
   left: 0;
   top: 0;
@@ -1657,6 +1657,7 @@ section.section-content {
   .hint {
     display: none !important;
     height: 0px !important;
+    z-index: 10;
   }
   .page-min-margin {
     margin-left: 32px;

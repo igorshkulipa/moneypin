@@ -1,2 +1,2 @@
-# sencoiney
+# moneypin
 Personal Finance Application
