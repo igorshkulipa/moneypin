@@ -121,7 +121,7 @@ section,
 #tab-categories:target .page#page-00,
 #tab-settings:target .page#page-00,
 #tab-help:target .page#page-00 {
-  background: black;
+  background: #000000;
 }
 #tab-transactions:target .page-01-header,
 #tab-budget:target .page-01-header,
@@ -195,9 +195,12 @@ ul.ul-menu {
   z-index: 1;
 }
 .menu-icon {
-  color: #fff;
+  color: #ffffff;
   font-size: 32px;
   display: block;
+}
+.text-menu {
+  color: #ffffff;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -246,11 +249,11 @@ a:hover {
   align-content: center;
 }
 .hint a {
-  color: #EFFF06;
+  color: #ffffff;
   transition: all 250ms easet-out;
 }
 .hint a:hover {
-  color: #FFF;
+  color: #ffffff;
 }
 .credit {
   position: absolute;
@@ -260,13 +263,21 @@ a:hover {
   font-size: 10px;
 }
 .credit a {
-  color: #fff;
+  color: #ffffff;
 }
 .main-nav {
   width: 250px;
 }
 a.header-ref {
   color: white;
+}
+.row-filter {
+  height: 52px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  position: fixed;
 }
 .section-padding-layout {
   margin-top: 0px;
@@ -1533,8 +1544,8 @@ section.section-content {
 .div-border {
   border: solid;
   border-width: 3px;
-  border-color: #fff;
-  border-radius: 5px;
+  border-color: #ffffff;
+  border-radius: 3px;
 }
 .icon-inside-chart {
   position: absolute;
