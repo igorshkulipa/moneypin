@@ -1,27 +1,35 @@
 ﻿@import "../variables.less";
 
-@padding-left-account: 10px;
-@padding-right-account: 10px;
-@padding-top-account: 10px;
-@padding-bottom-account: 10px;
+@padding-left-account: 8px;
+@padding-right-account: 8px;
+@padding-top-account: 15px;
+@padding-bottom-account: 8px;
+
+@margin-left-account: 4px;
+@margin-right-account: 4px;
+@margin-top-account: 4px;
+@margin-bottom-account: 4px;
+
+@height-div-account: 170px;
 
 .div-account {
-    height: 150px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-bottom: 8px;
-    padding-top: 15px;
-    padding-left: 8px;
-    padding-right: 8px;
+    height: @height-div-account;
+    margin-top: @margin-top-account;
+    margin-bottom: @margin-bottom-account;
+    margin-left: @margin-left-account;
+    margin-right: @margin-right-account;
+    padding-bottom: @padding-bottom-account;
+    padding-top: @padding-top-account;
+    padding-left: @padding-left-account;
+    padding-right: @padding-right-account;
+    background-color: @color-bg-tile;
 }
 
 .div-border {
     border: solid;
-    border-width: 3px;
+    border-width: 0px;
     border-color: @color-border-light;
-    border-radius: 3px;
+    border-radius: 0px;
 }
 
 .icon-inside-chart {
@@ -67,6 +75,12 @@
     &.small {
         font-size: 64px;
     }
+
+    z-index: 1;
+}
+
+.transparent {
+    background-color: transparent;
 }
 
 .width-64 {
@@ -122,4 +136,15 @@
 
 .text-grey {
     color: @color-text-grey;
+}
+
+.account-type-icon {
+    color: @color-text-light;
+    font-size: 32px;
+    display: block;
+    z-index: 0;
+}
+
+.pos-fixed {
+    position: fixed;
 }

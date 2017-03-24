@@ -30,64 +30,64 @@ section,
 }
 #page-00 {
   left: 0;
-  background: #374046;
+  background: #111a2a;
 }
 #page-01 {
-  background-color: transparent;
-  left: 0;
-  margin-left: 10%;
-  z-index: 1;
+  background-color: #111a2a;
+  left: 100%;
+  position: absolute;
+  z-index: 2;
 }
 #page-02 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-03 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-04 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-05 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-06 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-07 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-08 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #page-09 {
-  background-color: #374046;
+  background-color: #111a2a;
   left: 100%;
   position: absolute;
   z-index: 2;
 }
 #tab-accounts:target .page#page-01 {
-  transform: translateX(0);
+  transform: translateX(-90%);
 }
 #tab-transactions:target .page#page-02 {
   transform: translateX(-90%);
@@ -113,6 +113,7 @@ section,
 #tab-help:target .page#page-09 {
   transform: translateX(-90%);
 }
+#tab-accounts:target .page#page-00,
 #tab-transactions:target .page#page-00,
 #tab-budget:target .page#page-00,
 #tab-debts:target .page#page-00,
@@ -121,8 +122,9 @@ section,
 #tab-categories:target .page#page-00,
 #tab-settings:target .page#page-00,
 #tab-help:target .page#page-00 {
-  background: #000000;
+  background: #e3e4e8;
 }
+#tab-accounts:target .page-01-header,
 #tab-transactions:target .page-01-header,
 #tab-budget:target .page-01-header,
 #tab-debts:target .page-01-header,
@@ -134,6 +136,7 @@ section,
   background-color: transparent;
   transition-delay: 0s;
 }
+#tab-accounts:target .page#page-00 .icon,
 #tab-transactions:target .page#page-00 .icon,
 #tab-budget:target .page#page-00 .icon,
 #tab-debts:target .page#page-00 .icon,
@@ -145,6 +148,7 @@ section,
   -webkit-filter: blur(3px);
   filter: blur(3px);
 }
+#tab-accounts:target section .section-content,
 #tab-transactions:target section .section-content,
 #tab-budget:target section .section-content,
 #tab-debts:target section .section-content,
@@ -156,6 +160,9 @@ section,
   transform: scale(0.6);
   transition-delay: .25s;
   background-color: transparent;
+}
+#tab-accounts:target #menu-item-02 {
+  transform: scale(1.2) !important;
 }
 #tab-transactions:target #menu-item-02 {
   transform: scale(1.2) !important;
@@ -195,12 +202,12 @@ ul.ul-menu {
   z-index: 1;
 }
 .menu-icon {
-  color: #ffffff;
+  color: #111a2a;
   font-size: 32px;
   display: block;
 }
 .text-menu {
-  color: #ffffff;
+  color: #111a2a;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -249,11 +256,11 @@ a:hover {
   align-content: center;
 }
 .hint a {
-  color: #ffffff;
+  color: #111a2a;
   transition: all 250ms easet-out;
 }
 .hint a:hover {
-  color: #ffffff;
+  color: #111a2a;
 }
 .credit {
   position: absolute;
@@ -263,7 +270,7 @@ a:hover {
   font-size: 10px;
 }
 .credit a {
-  color: #ffffff;
+  color: #111a2a;
 }
 .main-nav {
   width: 250px;
@@ -284,7 +291,7 @@ a.header-ref {
   padding-top: 5%;
   padding-right: 1%;
   padding-bottom: 1%;
-  padding-left: 5%;
+  padding-left: 1%;
 }
 section.section-content {
   width: 90%;
@@ -292,7 +299,7 @@ section.section-content {
   padding-top: 5%;
   padding-right: 1%;
   padding-bottom: 1%;
-  padding-left: 5%;
+  padding-left: 1%;
 }
 .section-scrollable {
   overflow-y: auto;
@@ -749,7 +756,7 @@ section.section-content {
   display: block;
   content: " ";
   border-radius: 50%;
-  background-color: #f5f5f5;
+  background-color: transparent;
   width: 0.84em;
   height: 0.84em;
   -webkit-transition-property: all;
@@ -1504,10 +1511,10 @@ section.section-content {
 }
 .c100.green .bar,
 .c100.green .fill {
-  border-color: #4db53c !important;
+  border-color: #0dcb42 !important;
 }
 .c100.green:hover > span {
-  color: #4db53c;
+  color: #0dcb42;
 }
 .c100.green.dark .bar,
 .c100.green.dark .fill {
@@ -1518,10 +1525,10 @@ section.section-content {
 }
 .c100.orange .bar,
 .c100.orange .fill {
-  border-color: #dd9d22 !important;
+  border-color: #cf4140 !important;
 }
 .c100.orange:hover > span {
-  color: #dd9d22;
+  color: #cf4140;
 }
 .c100.orange.dark .bar,
 .c100.orange.dark .fill {
@@ -1531,21 +1538,22 @@ section.section-content {
   color: #e08833;
 }
 .div-account {
-  height: 150px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
+  height: 170px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
   padding-bottom: 8px;
   padding-top: 15px;
   padding-left: 8px;
   padding-right: 8px;
+  background-color: #e3e4e8;
 }
 .div-border {
   border: solid;
-  border-width: 3px;
+  border-width: 0px;
   border-color: #ffffff;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 .icon-inside-chart {
   position: absolute;
@@ -1618,8 +1626,14 @@ section.section-content {
   border-style: none;
   font-size: 32px;
 }
+.c100 {
+  z-index: 1;
+}
 .c100.small {
   font-size: 64px;
+}
+.transparent {
+  background-color: transparent;
 }
 .width-64 {
   width: 64px;
@@ -1632,10 +1646,10 @@ section.section-content {
   width: calc(100% - 64px);
   top: 0px;
   position: absolute;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 15px;
+  padding-bottom: 8px;
 }
 .text-small {
   font-size: 0.4em;
@@ -1653,7 +1667,7 @@ section.section-content {
   font-style: italic;
 }
 .text-white {
-  color: #fff;
+  color: #ffffff;
 }
 .text-red {
   color: #912f40;
@@ -1663,6 +1677,15 @@ section.section-content {
 }
 .text-grey {
   color: grey;
+}
+.account-type-icon {
+  color: #111a2a;
+  font-size: 32px;
+  display: block;
+  z-index: 0;
+}
+.pos-fixed {
+  position: fixed;
 }
 @media screen and (max-width: 800px) {
   .hint {

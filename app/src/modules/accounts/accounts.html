@@ -23,7 +23,7 @@
 <script id="viewAccount" type="text/html">
     <div class="col-md-3 div-account div-border" data-bind="click: $parent.selectedAccount, clickBubble: false">
         <div class="pull-left width-64 full-height">
-            <i class="fa text-white menu-icon"
+            <i class="fa text-white account-type-icon"
                data-bind="css : {
                            'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
                            'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
@@ -45,7 +45,7 @@
 <script id="editAccount" type="text/html">
     <div class="col-md-3 div-account div-border" data-bind="click: $parent.selectedAccount, clickBubble: false">
         <div class="pull-left width-64 full-height">
-            <i class="fa text-white menu-icon"
+            <i class="fa text-white account-type-icon"
                data-bind="css : {
                            'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
                            'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
@@ -67,7 +67,13 @@
 
 
 <script id="percentageChart" type="text/html">
-    <div class="c100 p55 small dark center orange">
+    <div class="c100 p100 small transparent center orange pos-fixed">
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
+    </div>
+    <div class="c100 p55 small transparent center green pos-fixed">
         <div class="slice">
             <div class="bar"></div>
             <div class="fill"></div>
