@@ -5,27 +5,39 @@
         z-index: 10;
     }
 
-    .page-min-margin {
-        margin-left: 32px;
+    @width-nav: 70px;
+
+    .section-wrapper {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
     }
 
-    .page-01-min-margin {
-        margin-left: 64px;
+    .section-header {
+        height: 10%;
+        background-color: @color-bg-header;
+        width: 100%;
+        z-index: 1;
+        margin-left: @width-nav;
     }
 
-    #page-01 {
-        .page-01-min-margin;
+    .section-nav {
+        background-color: @color-bg-nav;
+        width: @width-nav;
+        height: 100%;
+        z-index: 2;
+        position: fixed;
+        top: 0px;
+        left: 0px;
     }
 
-    #tab-transactions:target .page#page-02,
-    #tab-budget:target .page#page-03,
-    #tab-debts:target .page#page-04,
-    #tab-calendar:target .page#page-05,
-    #tab-analysis:target .page#page-06,
-    #tab-category:target .page#page-07,
-    #tab-settings:target .page#page-08,
-    #tab-help:target .page#page-09 {
-        .page-min-margin;
+    .section-content {
+        height: 90%;
+        background-color: @color-bg-main;
+        width: 100%;
+        z-index: 2;
+        margin-left: @width-nav;
     }
 }
 

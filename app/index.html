@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Sencoiney. Personal Finance Application</title>
+    <title>Moneypin. Personal Finance Application</title>
     <meta charset="utf-8" />
     <meta name="description" content="app" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -19,11 +19,13 @@
     <link rel="stylesheet" href="styles/css/main.css">
 </head>
 <body>
-    <nav class="main-nav">
+    <header class="section-header">Header</header>
+    <nav class="section-nav">
         <section id="layout-menu"></section>
     </nav>
-    <article class="main-article">
-        <div class="ct" id="tab-accounts">
+    <article class="section-content">
+        <section class="section-scrollable" id="content-main"></section>
+        <!--<div class="ct" id="tab-accounts">
             <div class="ct" id="tab-transactions">
                 <div class="ct" id="tab-budget">
                     <div class="ct" id="tab-debts">
@@ -69,7 +71,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </article>
     <script data-main="init.js" src="require.js"></script>
 

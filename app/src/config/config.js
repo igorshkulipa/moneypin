@@ -34,7 +34,7 @@
                 html: 'modules/accounts/accounts.html',
                 js: 'modules/accounts/accounts',
                 path: 'tab-accounts',
-                position: 'content-accounts',
+                position: 'content-main',
                 templates:[],
                 default: true
             },
@@ -44,7 +44,7 @@
                 html: 'modules/analysis/analysis.html',
                 js: 'modules/analysis/analysis',
                 path: 'tab-analysis',
-                position: 'content-analysis',
+                position: 'content-main',
                 templates: [],
             },
             budget: {
@@ -53,7 +53,7 @@
                 html: 'modules/budget/budget.html',
                 js: 'modules/budget/budget',
                 path: 'tab-budget',
-                position: 'content-budget',
+                position: 'content-main',
                 templates: [],
             },
             calendar: {
@@ -62,7 +62,7 @@
                 html: 'modules/calendar/calendar.html',
                 js: 'modules/calendar/calendar',
                 path: 'tab-calendar',
-                position: 'content-calendar',
+                position: 'content-main',
                 templates: [],
             },
             categories: {
@@ -71,7 +71,7 @@
                 html: 'modules/categories/categories.html',
                 js: 'modules/categories/categories',
                 path: 'tab-categories',
-                position: 'content-categories',
+                position: 'content-main',
                 templates: [],
             },
             debts: {
@@ -80,7 +80,7 @@
                 html: 'modules/debts/debts.html',
                 js: 'modules/debts/debts',
                 path: 'tab-debts',
-                position: 'content-debts',
+                position: 'content-main',
                 templates: [],
             },
             transactions: {
@@ -89,7 +89,7 @@
                 html: 'modules/transactions/transactions.html',
                 js: 'modules/transactions/transactions',
                 path: 'tab-transactions',
-                position: 'content-transactions',
+                position: 'content-main',
                 templates: [],
             },
             help: {
@@ -98,7 +98,7 @@
                 html: 'modules/help/help.html',
                 js: 'modules/help/help',
                 path: 'tab-help',
-                position: 'content-help',
+                position: 'content-main',
                 templates: [],
             },
             settings: {
@@ -107,7 +107,7 @@
                 html: 'modules/settings/settings.html',
                 js: 'modules/settings/settings',
                 path: 'tab-settings',
-                position: 'content-settings',
+                position: 'content-main',
                 templates: [],
             }
         }

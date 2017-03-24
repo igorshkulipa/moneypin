@@ -1,59 +1,36 @@
 ﻿@import "variables.less";
 
-.section-padding-layout {
-    margin-top: @margin-page-top;
-    padding-top: @padding-page-top;
-    padding-right: @padding-page-right;
-    padding-bottom: @padding-page-bottom;
-    padding-left: @padding-page-left;
-}
+@width-nav: 100px;
 
-section.section-content {
-    width: 90%;
-    .section-padding-layout;
-}
-
-.section-scrollable {
-    overflow-y: auto;
-}
-
-.section-scrollable {
-    overflow-y: auto;
-}
-
-.section-padding-page {
-    padding-left: 10px;
-    margin-top: 32px;
-}
-
-.section-height-60 {
-    height: 60% !important;
-}
-
-.section-height-40 {
-    height: 40% !important;
-}
-
-.page-01-header {
-    position: fixed;
-    display: block;
-    top: 0px;
-    margin-top: @padding-page-top;
-    height: ~"calc(@padding-page-top + 2px)";
+.section-wrapper {
     width: 100%;
-    background-color: transparent;
-    z-index: 1;
-    padding: 0px 0px 0px 0px;
-}
-
-.page-header {
-    .page-01-header
-}
-
-.full-width {
-    width: 100%;
-}
-
-.full-height {
     height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.section-header {
+    height: 10%;
+    background-color: @color-bg-header;
+    width: 100%;
+    z-index: 1;
+    margin-left: @width-nav;
+}
+
+.section-nav {
+    background-color: @color-bg-nav;
+    width: @width-nav;
+    height: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.section-content {
+    height: 90%;
+    background-color: @color-bg-main;
+    width: 100%;
+    z-index: 2;
+    margin-left: @width-nav;
 }
