@@ -1,5 +1,6 @@
-﻿define(['knockout'], (ko) => {
-    return {
+﻿define(['knockout', 'jquery'], (ko, $) => {
+    var activeItemId = 'menu-item-03';
+    var vm = {
         actionMenuItemText: ko.observable('Action'),
         transferMenuItemText: ko.observable('Transfer'),
         actionClick: ($data, $event) => {
@@ -43,4 +44,5 @@
             return false;
         }
     };
+    return vm;
 });

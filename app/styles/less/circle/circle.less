@@ -1,3 +1,4 @@
+@import "../variables.less";
 // VARS
 @circle-width: 0.08em;
 @circle-width-hover: 0.04em;
@@ -7,8 +8,8 @@
 @secondary-color: #ccc;
 @bg-color: transparent;
 
-@primary-color-green: #0dcb42;
-@primary-color-orange: #cf4140;
+@primary-color-green: @color-text-green;
+@primary-color-red: @color-text-red;
 
 
 // colors dark skin
@@ -17,7 +18,7 @@
 @bg-color-dark: #666;
 
 @primary-color-green-dark: #5fd400;
-@primary-color-orange-dark: #e08833;
+@primary-color-red-dark: #e08833;
 
 // mixins
 @import "mixins.less";
@@ -219,12 +220,12 @@
     &.orange {
 
         .bar, .fill {
-            border-color: @primary-color-orange !important;
+            border-color: @primary-color-red !important;
         }
 
         &:hover {
             > span {
-                color: @primary-color-orange;
+                color: @primary-color-red;
             }
         }
     }
@@ -232,12 +233,12 @@
     &.orange.dark {
 
         .bar, .fill {
-            border-color: @primary-color-orange-dark !important;
+            border-color: @primary-color-red-dark !important;
         }
 
         &:hover {
             > span {
-                color: @primary-color-orange-dark;
+                color: @primary-color-red-dark;
             }
         }
     }

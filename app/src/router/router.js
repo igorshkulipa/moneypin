@@ -1,4 +1,4 @@
-﻿define(['signals', 'hasher', 'crossroads'], (signals, hasher, crossroads) => {
+﻿define(['signals', 'hasher', 'crossroads', 'jquery'], (signals, hasher, crossroads, $) => {
     var router = {
         init: init,
         add: add,
@@ -6,6 +6,8 @@
     };
 
     return router;
+
+    var currentHash = '';
 
     function add(path, params) {
         crossroads.addRoute('/' + path);
@@ -30,5 +32,13 @@
 
     function _parseHash(newHash) {
         crossroads.parse(newHash);
+        $('#menu-item-' + currentHash).removeClass('nav-active');
+        $('#menu-item-' + currentHash + '-icon').removeClass('nav-active');
+        $('#menu-item-' + currentHash + '-text').removeClass('nav-active');
+
+        $('#menu-item-' + newHash).addClass('nav-active');
+        $('#menu-item-' + newHash + '-icon').addClass('nav-active');
+        $('#menu-item-' + newHash + '-text').addClass('nav-active');
+        currentHash = newHash;
     }
 });

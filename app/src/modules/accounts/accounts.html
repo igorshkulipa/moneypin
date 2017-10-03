@@ -16,14 +16,14 @@
 
 <script id="newAccount" type="text/html">
     <div class="col-md-3 div-account div-border" data-bind="click: methods.newAccount, clickBubble: false">
-        <i class="fa text-white menu-icon fa-plus"></i>
+        <i class="fa text-grey menu-icon fa-plus"></i>
     </div>
 </script>
 
 <script id="viewAccount" type="text/html">
     <div class="col-md-3 div-account div-border" data-bind="click: $parent.selectedAccount, clickBubble: false">
         <div class="pull-left width-64 full-height">
-            <i class="fa text-white account-type-icon"
+            <i class="fa text-grey account-type-icon"
                data-bind="css : {
                            'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
                            'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
@@ -36,7 +36,7 @@
         </div>
         <div class="pull-right margin-left-64 div-account-info">
             <p class="text-normal text-bold text-grey" data-bind="text:name"></p>
-            <p class="text-big text-bold text-white"><span data-bind="text:sum"></span><span>&nbsp;&#x20b4;</span></p>
+            <p class="text-big text-bold text-grey"><span data-bind="text:sum"></span><span>&nbsp;&#x20b4;</span></p>
             <p class="text-normal text-grey"><span>Plan:</span><span data-bind="text:plannedValue"></span><span>&nbsp;&#x20b4;</span></p>
         </div>
     </div>
@@ -45,7 +45,7 @@
 <script id="editAccount" type="text/html">
     <div class="col-md-3 div-account div-border" data-bind="click: $parent.selectedAccount, clickBubble: false">
         <div class="pull-left width-64 full-height">
-            <i class="fa text-white account-type-icon"
+            <i class="fa text-grey account-type-icon"
                data-bind="css : {
                            'fa-money fa-money-inside-chart' : $parent.methods.isCash($data),
                            'fa-bank fa-bank-inside-chart' : $parent.methods.isBank($data),
@@ -58,7 +58,7 @@
         </div>
         <div class="pull-right margin-left-64 div-account-info">
             <input data-bind="value:name, click: $parent.inputClick" />
-            <!--<p class="text-big text-bold text-white" data-bind="text:sum"></p>-->
+            <!--<p class="text-big text-bold text-grey" data-bind="text:sum"></p>-->
             <input type="number" data-bind="value:sum, click: $parent.inputClick" />
             <input type="number" data-bind="value:plannedValue, click: $parent.inputClick" />
         </div>
