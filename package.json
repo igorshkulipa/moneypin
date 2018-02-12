@@ -46,7 +46,8 @@
   "watch": {
     "watch_dev": {
       "patterns": [
-        "src", "styles"
+        "src",
+        "styles"
       ],
       "extensions": "ts,html,htm,less,json",
       "quiet": false
