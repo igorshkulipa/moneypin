@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{791A2F01-5E76-462C-81CC-08B57469F181}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Components/MainMenu/MainMenu.html">
+    <Files>
+      <File FileName="src/Main/MoneypinMain.html" Line="3" Column="39" />
+      <File FileName="src/Components/MainMenu/MainMenu.html" Line="64" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.moneypin PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

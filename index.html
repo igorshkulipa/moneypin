@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+    <title>Sencoiney. Personal Finance Application</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" href="styles/css/normalize.min.css">
+    <link rel='stylesheet' href='styles/css/font-awesome.css'>
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/css/main.css">
+</head>
+<body>
+    <moneypin-main>Loading...</moneypin-main>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+      System.import('dist/main.js').catch(function (err) {
+          console.error(err);
+      });
+    </script>
+</body>
+</html>

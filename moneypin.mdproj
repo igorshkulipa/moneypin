@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ItemType>GenericProject</ItemType>
+    <ProjectGuid>{791A2F01-5E76-462C-81CC-08B57469F181}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+    <OutputPath>.\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="README.md" />
+    <None Include="libpeerconnection.log" />
+    <None Include="moneypin.userprefs" />
+    <None Include="package.json" />
+    <None Include="systemjs.config.js" />
+    <None Include="tsconfig.json" />
+    <None Include="index.html" />
+    <None Include="src\Main\MoneypinMain.component.ts" />
+    <None Include="src\Main\MoneypinMain.html" />
+    <None Include="src\Main\MoneypinMain.module.ts" />
+    <None Include="src\main.ts" />
+    <None Include="styles\colors\colors.htm" />
+    <None Include="styles\css\bootstrap.min.css" />
+    <None Include="styles\css\font-awesome.css" />
+    <None Include="styles\css\main.css" />
+    <None Include="styles\css\normalize.min.css" />
+    <None Include="styles\fonts\FontAwesome.otf" />
+    <None Include="styles\fonts\fontawesome-webfont.eot" />
+    <None Include="styles\fonts\fontawesome-webfont.svg" />
+    <None Include="styles\fonts\fontawesome-webfont.ttf" />
+    <None Include="styles\fonts\fontawesome-webfont.woff" />
+    <None Include="styles\fonts\fontawesome-webfont.woff2" />
+    <None Include="styles\fonts\fontawesome-webfontba72.eot" />
+    <None Include="styles\fonts\fontawesome-webfontba72.svg" />
+    <None Include="styles\fonts\fontawesome-webfontba72.ttf" />
+    <None Include="styles\fonts\fontawesome-webfontba72.woff" />
+    <None Include="styles\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="styles\fonts\glyphicons-halflings-regular.html" />
+    <None Include="styles\fonts\glyphicons-halflings-regular-2.html" />
+    <None Include="styles\fonts\glyphicons-halflings-regular-3.html" />
+    <None Include="styles\fonts\glyphicons-halflings-regular-4.html" />
+    <None Include="styles\fonts\glyphicons-halflings-regulard41d.html" />
+    <None Include="styles\icons\android-icon-144x144.png" />
+    <None Include="styles\icons\android-icon-192x192.png" />
+    <None Include="styles\icons\android-icon-36x36.png" />
+    <None Include="styles\icons\android-icon-48x48.png" />
+    <None Include="styles\icons\android-icon-72x72.png" />
+    <None Include="styles\icons\android-icon-96x96.png" />
+    <None Include="styles\icons\apple-icon.png" />
+    <None Include="styles\icons\apple-icon-114x114.png" />
+    <None Include="styles\icons\apple-icon-120x120.png" />
+    <None Include="styles\icons\apple-icon-144x144.png" />
+    <None Include="styles\icons\apple-icon-152x152.png" />
+    <None Include="styles\icons\apple-icon-180x180.png" />
+    <None Include="styles\icons\apple-icon-57x57.png" />
+    <None Include="styles\icons\apple-icon-60x60.png" />
+    <None Include="styles\icons\apple-icon-72x72.png" />
+    <None Include="styles\icons\apple-icon-76x76.png" />
+    <None Include="styles\icons\apple-icon-precomposed.png" />
+    <None Include="styles\icons\browserconfig.xml" />
+    <None Include="styles\icons\favicon.ico" />
+    <None Include="styles\icons\favicon-16x16.png" />
+    <None Include="styles\icons\favicon-32x32.png" />
+    <None Include="styles\icons\favicon-96x96.png" />
+    <None Include="styles\icons\manifest.json" />
+    <None Include="styles\icons\ms-icon-144x144.png" />
+    <None Include="styles\icons\ms-icon-150x150.png" />
+    <None Include="styles\icons\ms-icon-310x310.png" />
+    <None Include="styles\icons\ms-icon-70x70.png" />
+    <None Include="styles\images\balance.png" />
+    <None Include="styles\images\balance1.png" />
+    <None Include="styles\images\logo.png" />
+    <None Include="styles\less\body.less" />
+    <None Include="styles\less\elements.less" />
+    <None Include="styles\less\main.less" />
+    <None Include="styles\less\media.less" />
+    <None Include="styles\less\modals.less" />
+    <None Include="styles\less\pages\accounts.less" />
+    <None Include="styles\less\pages.less" />
+    <None Include="styles\less\scrollbars.less" />
+    <None Include="styles\less\sections.less" />
+    <None Include="styles\less\tabs.less" />
+    <None Include="styles\less\treeview.less" />
+    <None Include="styles\less\variables.less" />
+    <None Include="styles\less\circle\circle.less" />
+    <None Include="styles\less\circle\mixins.less" />
+    <None Include="styles\less\variables_light.less" />
+    <None Include="src\Components\MainMenu\MainMenu.html" />
+    <None Include="src\Components\MainMenu\MainMenu.component.ts" />
+    <None Include="src\Components\MainMenu\MainMenu.module.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\Components\" />
+    <Folder Include="src\Directives\" />
+    <Folder Include="src\Modules\" />
+    <Folder Include="src\Main\" />
+    <Folder Include="styles\" />
+    <Folder Include="styles\colors\" />
+    <Folder Include="styles\css\" />
+    <Folder Include="styles\fonts\" />
+    <Folder Include="styles\icons\" />
+    <Folder Include="styles\images\" />
+    <Folder Include="styles\less\" />
+    <Folder Include="src\Components\MainMenu\" />
+  </ItemGroup>
+</Project>
