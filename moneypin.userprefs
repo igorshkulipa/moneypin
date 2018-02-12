@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{791A2F01-5E76-462C-81CC-08B57469F181}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/Components/MainMenu/MainMenu.html">
+  <MonoDevelop.Ide.Workbench ActiveDocument="package-lock.json">
     <Files>
       <File FileName="src/Main/MoneypinMain.html" Line="3" Column="39" />
       <File FileName="src/Components/MainMenu/MainMenu.html" Line="64" Column="7" />
+      <File FileName="package.json" Line="22" Column="37" />
+      <File FileName="package-lock.json" Line="864" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Default" />

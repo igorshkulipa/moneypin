@@ -92,6 +92,7 @@
     <None Include="src\Components\MainMenu\MainMenu.html" />
     <None Include="src\Components\MainMenu\MainMenu.component.ts" />
     <None Include="src\Components\MainMenu\MainMenu.module.ts" />
+    <None Include="package-lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
